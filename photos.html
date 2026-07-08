@@ -22,24 +22,54 @@
   </nav>
 
   <h1 class="page-title">Photos</h1>
-  <p class="page-intro">Photographs from the road. The colored blocks below are placeholders — they'll be replaced with your real photos.</p>
+  <p class="page-intro">Photographs from the road.</p>
 
   <hr class="rule">
 
   <div class="gallery">
-    <!-- To add a real photo: put the file in the images/ folder, then replace
-         <div class="ph ph-a"></div> with <div class="ph"><img src="images/photo1.jpg" alt="description"></div> -->
-    <figure><div class="ph ph-a"></div><figcaption>Place, Year — caption</figcaption></figure>
-    <figure><div class="ph ph-b"></div><figcaption>Place, Year — caption</figcaption></figure>
-    <figure><div class="ph ph-c"></div><figcaption>Place, Year — caption</figcaption></figure>
-    <figure><div class="ph ph-d"></div><figcaption>Place, Year — caption</figcaption></figure>
-    <figure><div class="ph ph-e"></div><figcaption>Place, Year — caption</figcaption></figure>
-    <figure><div class="ph ph-f"></div><figcaption>Place, Year — caption</figcaption></figure>
+    <figure><div class="ph"><img src="images/el-morro-san-juan.jpg" alt="Arms outstretched on the lawn facing Castillo San Felipe del Morro"></div><figcaption>San Juan, Puerto Rico, 2025</figcaption></figure>
+    <figure><div class="ph"><img src="images/miami-sunset-pier.jpg" alt="Sunset over a rock jetty stretching into turquoise water"></div><figcaption>Miami, Florida, 2026</figcaption></figure>
+    <figure><div class="ph"><img src="images/one-world-trade-center.jpg" alt="Pointing up at One World Trade Center against a blue sky"></div><figcaption>New York City, 2026</figcaption></figure>
+    <figure><div class="ph"><img src="images/red-arrows-airshow.jpg" alt="Red Arrows jets in formation with smoke trails"></div><figcaption>Air show, 2026</figcaption></figure>
   </div>
 
   <footer class="site-footer">
     © 2026 Nan Xiao · <a href="mailto:nx2177@columbia.edu">Email</a> · <a href="https://github.com/nx2177">GitHub</a> · <a href="https://linkedin.com/in/nan-xiao-bb4805327">LinkedIn</a>
   </footer>
 </div>
+
+<div class="lightbox" id="lightbox">
+  <span class="lb-close" id="lb-close">&times;</span>
+  <img id="lb-img" src="" alt="">
+  <div class="lb-cap" id="lb-cap"></div>
+</div>
+
+<script>
+(function(){
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lb-img');
+  var lbCap = document.getElementById('lb-cap');
+
+  function open(img){
+    lbImg.src = img.getAttribute('src');
+    lbImg.alt = img.getAttribute('alt') || '';
+    var fig = img.closest('figure');
+    var cap = fig ? fig.querySelector('figcaption') : null;
+    lbCap.textContent = cap ? cap.textContent : '';
+    lb.classList.add('active');
+  }
+  function close(){
+    lb.classList.remove('active');
+    lbImg.src = '';
+  }
+
+  document.querySelectorAll('.gallery .ph img').forEach(function(img){
+    img.addEventListener('click', function(){ open(img); });
+  });
+  lb.addEventListener('click', function(e){ if (e.target === lb) close(); });
+  document.getElementById('lb-close').addEventListener('click', close);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+})();
+</script>
 </body>
 </html>
