@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Nan Xiao</title>
+<meta name="description" content="AI and software engineering projects by Nan Xiao: LLM systems, multi-agent platforms, RAG.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <div class="site-title"><a href="index.html">Nan Xiao</a></div>
+    <div class="sub">Notes on machines, places, and light</div>
+  </header>
+  <nav class="main">
+    <a href="index.html">Home</a>
+    <a href="writing.html">Writing</a>
+    <a href="photos.html">Photos</a>
+    <a href="projects.html" class="active">Projects</a>
+    <a href="resume.html">Resume</a>
+  </nav>
+
+  <h1 class="page-title">Projects</h1>
+  <p class="page-intro">Selected engineering work — production LLM systems, multi-agent platforms, and infrastructure. More on <a href="https://github.com/nx2177">GitHub</a>.</p>
+
+  <hr class="rule">
+
+  <ul class="work-list">
+    <li>
+      <div class="row"><h4>Multi-Agent LLM Evaluation Platform</h4><span class="tag">Python · GPT-4o · Asyncio</span></div>
+      <div class="where">Summoner, New York — AI Engineer</div>
+      <p>An LLM-driven platform that ingests user context, generates domain-agnostic challenge questions with logical reasoning pathways, synthesizes AI personas, and orchestrates real-time timed challenge sessions. Answers are evaluated with GPT-4o structured logic extraction and embedding cosine-similarity scoring for automated partial credit. Includes a configurable multi-factor scoring system, cost-observability safeguards with real-time USD tracking and budget ceilings, semaphore-bounded async concurrency, and a state-machine protocol letting persona agents request peer hints through async message queues.</p>
+    </li>
+    <li>
+      <div class="row"><h4>Server-Side Pagination Re-architecture</h4><span class="tag">SQL · Redis · Microservices</span></div>
+      <div class="where">Antares Capital, New York — Software Engineer</div>
+      <p>Re-architected a legacy service from client-side full data loading to server-side pagination with database-driven SQL queries — reducing transfer size from ~50MB to ~200KB per request and page loads from 10–30s to ~1–2s. Introduced pagination-friendly indexing and Redis-based distributed caching, enabling stateless services and horizontal scaling across API servers.</p>
+    </li>
+    <li>
+      <div class="row"><h4>Local RAG Research Agent</h4><span class="tag">LangChain · Ollama · RAG</span></div>
+      <div class="where">Epsilla (YC 23), New York — AI Product Strategist</div>
+      <p>An Ollama-powered automated research system built on LangChain: multi-source search (DuckDuckGo, Tavily, Perplexity), local LLM summarization, YouTube transcript ingestion, configurable research loops, and SMTP delivery of concise, citation-backed reports — improving research efficiency by 27%.</p>
+    </li>
+    <li>
+      <div class="row"><h4>Evaluation Analytics Pipeline</h4><span class="tag">SQL · PLS Regression</span></div>
+      <div class="where">Summoner, New York — AI Engineer</div>
+      <p>A SQL-based pipeline collecting agent telemetry and experimental data at scale, powering statistical diagnostics and benchmarking. Includes a Partial Least Squares regression dashboard with cross-validated Q² metrics and VIP feature-importance scoring to identify performance drivers across agent configurations.</p>
+    </li>
+  </ul>
+
+  <footer class="site-footer">
+    © 2026 Nan Xiao · <a href="mailto:nx2177@columbia.edu">Email</a> · <a href="https://github.com/nx2177">GitHub</a> · <a href="https://linkedin.com/in/nan-xiao-bb4805327">LinkedIn</a>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume — Nan Xiao</title>
+<meta name="description" content="Resume of Nan Xiao — AI Engineer with a Columbia MA in Statistics, experienced in LLM systems and scalable AI infrastructure.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <div class="site-title"><a href="index.html">Nan Xiao</a></div>
+    <div class="sub">Notes on machines, places, and light</div>
+  </header>
+  <nav class="main">
+    <a href="index.html">Home</a>
+    <a href="writing.html">Writing</a>
+    <a href="photos.html">Photos</a>
+    <a href="projects.html">Projects</a>
+    <a href="resume.html" class="active">Resume</a>
+  </nav>
+
+  <h1 class="page-title">Resume</h1>
+  <p class="page-intro">AI Engineer with a background in Applied Mathematics and Statistics, experienced in building production-grade LLM systems, multi-agent evaluation platforms, and scalable AI infrastructure.</p>
+  <a class="btn" href="assets/Nan_Xiao_Resume.pdf" download>Download PDF</a>
+
+  <div class="resume">
+    <h2>Experience</h2>
+
+    <div class="entry">
+      <div class="head"><h3>Antares Capital LP — Software Engineer</h3><span class="when">March 2026 – Present · New York, NY</span></div>
+      <ul>
+        <li>Re-architected a legacy service from client-side full data loading to server-side pagination with database-driven SQL queries — reducing transfer size from ~50MB to ~200KB per request and page load time from 10–30s to ~1–2s.</li>
+        <li>Introduced pagination-friendly indexing strategies and Redis-based distributed caching, replacing per-instance in-memory storage and enabling stateless, horizontally scalable services.</li>
+        <li>Supported database migrations with the DBA team; led post-migration stabilization by diagnosing and fixing downstream bugs, improving system reliability.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="head"><h3>Summoner — AI Engineer</h3><span class="when">April 2025 – December 2025 · New York, NY</span></div>
+      <ul>
+        <li>Led research-to-product progression from a proof-of-concept for stochastic multi-agent resume evaluation to a modular, production-ready ML evaluation and ranking system with standardized logging, monitoring, and reproducibility controls.</li>
+        <li>Architected an LLM-driven multi-agent evaluation platform: context ingestion, challenge-question generation, AI persona synthesis, real-time timed sessions, and evaluation via LLM logic extraction and embedding cosine-similarity scoring.</li>
+        <li>Built a semantic evaluation engine (GPT-4o + OpenAI text-embedding-3-small) for automated partial-credit assessment with configurable multi-factor scoring.</li>
+        <li>Engineered cost-observability safeguards with tiktoken preflight counting, real-time USD tracking, and budget ceilings; optimized throughput with Asyncio and semaphore-bounded concurrency.</li>
+        <li>Designed a state-machine inter-agent collaboration protocol with async message queues, plus a SQL-based analytics pipeline and PLS-regression dashboard (Q², VIP scoring) to guide model weighting and architecture decisions.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="head"><h3>Epsilla (YC 23) — AI Product Strategist</h3><span class="when">February 2025 – March 2025 · New York, NY</span></div>
+      <ul>
+        <li>Built an Ollama-powered automated RAG research system with LangChain: multi-source search, local LLM summarization, YouTube transcript ingestion, and SMTP email delivery — improving research efficiency by 27%.</li>
+        <li>Optimized AI agent use cases across inbound sales and smart manufacturing; designed an AI content strategy that raised click-through rates by 15%.</li>
+      </ul>
+    </div>
+
+    <h2>Education</h2>
+
+    <div class="entry">
+      <div class="head"><h3>Columbia University — MA in Statistics</h3><span class="when">September 2024 – December 2025 · New York, NY</span></div>
+      <ul>
+        <li>Coursework: Generative AI using LLMs, NLP, Advanced Machine Learning, Statistical Machine Learning, Algorithms for Data Science, Applied Data Science, Advanced Data Analysis, Linear Regression, Probability, Inference.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="head"><h3>The Chinese University of Hong Kong, Shenzhen — BS in Applied Mathematics</h3><span class="when">September 2020 – July 2024 · Shenzhen, China</span></div>
+      <ul>
+        <li>Coursework: Machine Learning, Data Structures, Optimization, Stochastic Processes, Mathematical Modeling.</li>
+      </ul>
+    </div>
+
+    <h2>Skills</h2>
+    <div class="skills">
+      <p><strong>Languages:</strong> Python, SQL, Java, TypeScript/JavaScript, HTML/CSS</p>
+      <p><strong>AI / ML:</strong> PyTorch, Transformers, RAG, LangChain, TensorFlow, Hugging Face, Vector DBs, OpenAI, Pandas, NumPy, Scikit-learn</p>
+      <p><strong>Backend &amp; Frontend:</strong> Kafka, REST APIs, Microservices, React, Node.js, Nest.js, Zustand, Event-driven Architecture, TypeORM</p>
+      <p><strong>Data &amp; Cloud:</strong> PostgreSQL, Redis, Git, Docker, CI/CD, Azure DevOps, AWS, Datadog</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    © 2026 Nan Xiao · <a href="mailto:nx2177@columbia.edu">Email</a> · <a href="https://github.com/nx2177">GitHub</a> · <a href="https://linkedin.com/in/nan-xiao-bb4805327">LinkedIn</a>
+  </footer>
+</div>
+</body>
+</html>
