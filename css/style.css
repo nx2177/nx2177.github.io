@@ -4,7 +4,7 @@
   --card:#fffdf8; --border:#e3d9c6;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Georgia,'Times New Roman',serif;background:var(--bg);color:var(--text);line-height:1.7}
+body{font-family:Georgia,'Times New Roman',serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
 .sans{font-family:'Segoe UI',system-ui,sans-serif}
 .wrap{max-width:820px;margin:0 auto;padding:0 24px}
 
