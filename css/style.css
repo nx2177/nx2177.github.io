@@ -107,3 +107,89 @@ footer.site-footer a{color:var(--accent)}
   .gallery{grid-template-columns:repeat(2,1fr)}
   nav.main a{margin:0 8px}
 }
+
+/* ===================== The Exhibition ===================== */
+
+/* --- Museum hall (photos.html) --- */
+.hall{position:relative;min-height:82vh;display:flex;flex-direction:column;overflow:hidden;margin:0 -24px;
+  background:linear-gradient(#f6efdf 0%, #efe4cd 46%, #e6d8ba 62%)}
+.hall::before{content:"";position:absolute;top:-18vh;left:50%;transform:translateX(-50%);
+  width:110vw;height:52vh;background:radial-gradient(ellipse at center,
+  rgba(255,250,235,.95) 0%, rgba(255,248,228,.35) 45%, transparent 70%);pointer-events:none}
+.hall .beams{position:absolute;top:0;left:0;right:0;height:9vh;
+  background:repeating-linear-gradient(90deg, transparent 0 11.8vw, rgba(120,95,55,.14) 11.8vw 12.5vw),
+  linear-gradient(#d9c8a6, #e8dcc2);border-bottom:2px solid rgba(120,95,55,.22)}
+.hall .floor{position:absolute;left:-30vw;right:-30vw;bottom:0;height:32vh;
+  background:repeating-linear-gradient(90deg, rgba(255,255,255,0) 0 7.4vw, rgba(96,74,40,.18) 7.4vw 7.7vw),
+  repeating-linear-gradient(0deg, rgba(255,255,255,0) 0 5.2vh, rgba(96,74,40,.14) 5.2vh 5.35vh),
+  linear-gradient(#dccba8, #cdb888);background-color:#d8c6a0;
+  transform:perspective(520px) rotateX(48deg);transform-origin:50% 100%;
+  box-shadow:0 -14px 40px rgba(90,70,40,.18) inset}
+.hall .banner{position:relative;z-index:3;margin:3.5vh auto 0;text-align:center;width:min(540px,86vw)}
+.hall .banner .cords{display:flex;justify-content:space-between;padding:0 70px;height:30px}
+.hall .banner .cords i{display:block;width:1.5px;height:100%;background:rgba(90,70,40,.45)}
+.hall .banner .board{background:#fffdf8;border:1px solid #d9cdb6;box-shadow:0 8px 26px rgba(90,70,40,.18);padding:18px 28px 16px}
+.hall .banner h1{font-size:28px;letter-spacing:.5px}
+.hall .banner .sub{font-style:italic;color:var(--muted);font-size:14px;margin-top:4px}
+.hall .banner .hours{font-family:'Segoe UI',system-ui,sans-serif;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-top:8px}
+.arches{position:relative;z-index:2;display:flex;justify-content:center;align-items:flex-end;gap:4.5vw;
+  margin-top:auto;padding:6vh 4vw 13vh;flex-wrap:wrap}
+.doorway{position:relative;text-decoration:none;color:inherit;display:block}
+.doorway .arch{position:relative;width:min(210px,23vw);aspect-ratio:11/16;border-radius:999px 999px 0 0;overflow:hidden;
+  border:10px solid #e7dcc4;border-bottom:none;
+  box-shadow:0 0 0 2px rgba(120,95,55,.25), 0 18px 40px rgba(90,70,40,.25);background:#1c150c}
+.doorway .arch img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.62) saturate(.9);transform:scale(1.04);transition:filter .45s, transform .45s}
+.doorway .arch::after{content:"";position:absolute;inset:0;border-radius:999px 999px 0 0;
+  background:linear-gradient(rgba(0,0,0,.28), transparent 40%, rgba(0,0,0,.18));transition:opacity .45s}
+.doorway:hover .arch img{filter:brightness(.95) saturate(1);transform:scale(1)}
+.doorway:hover .arch::after{opacity:.35}
+.doorway .teaser{position:absolute;left:50%;bottom:26%;transform:translateX(-50%) translateY(8px);width:82%;text-align:center;
+  color:#f7efdd;font-style:italic;font-size:14px;line-height:1.5;text-shadow:0 2px 10px rgba(0,0,0,.75);
+  opacity:0;transition:opacity .45s, transform .45s;pointer-events:none;z-index:2}
+.doorway:hover .teaser{opacity:1;transform:translateX(-50%) translateY(0)}
+.doorway .plaque{margin:14px auto 0;width:max-content;max-width:100%;background:#fffdf8;border:1px solid #d9cdb6;
+  padding:6px 15px;text-align:center;box-shadow:0 3px 10px rgba(90,70,40,.12)}
+.doorway .plaque .rm{font-family:'Segoe UI',system-ui,sans-serif;font-size:10px;letter-spacing:2.5px;color:var(--accent);text-transform:uppercase}
+.doorway .plaque .nm{font-size:15.5px;font-weight:700;line-height:1.35}
+.doorway .plaque .yr{font-size:11.5px;font-style:italic;color:var(--muted)}
+.doorway.closed .arch{background:linear-gradient(#141009,#241b0f)}
+.doorway.closed .arch .dark{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#7a6a50;font-style:italic;font-size:13px}
+.doorway.closed .teaser{bottom:38%}
+.doorway .rope{position:absolute;left:-14%;right:-14%;bottom:-6px;height:60px;z-index:3;pointer-events:none}
+.doorway .rope svg{width:100%;height:100%}
+.hall .hint{position:absolute;bottom:2.6vh;left:0;right:0;text-align:center;z-index:3;
+  font-family:'Segoe UI',system-ui,sans-serif;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(90,75,50,.75)}
+
+/* --- Room pages --- */
+.room-wrap{max-width:960px;margin:0 auto;padding:0 24px}
+.room-top{display:flex;justify-content:space-between;align-items:center;padding:22px 0;gap:10px;flex-wrap:wrap;
+  font-family:'Segoe UI',system-ui,sans-serif;font-size:11.5px;letter-spacing:2px;text-transform:uppercase}
+.room-top a{color:var(--accent);text-decoration:none}
+.room-top .mid{color:var(--muted)}
+.room-wall-text{max-width:580px;margin:48px auto 66px;text-align:center}
+.room-wall-text .roman{font-family:'Segoe UI',system-ui,sans-serif;font-size:12px;color:var(--accent);letter-spacing:4px;text-transform:uppercase}
+.room-wall-text h1{font-size:38px;margin:6px 0 2px}
+.room-wall-text .years{font-size:15px;font-style:italic;color:var(--muted);margin-bottom:18px}
+.room-wall-text p{font-size:16.5px;color:#4a4234;text-align:left}
+.hang{display:grid;grid-template-columns:1fr 240px;gap:0;margin-bottom:96px;align-items:end}
+.hang.flip{grid-template-columns:240px 1fr}
+.hang .photo img{width:100%;display:block;box-shadow:0 22px 50px -18px rgba(60,45,20,.35);cursor:pointer}
+.exhibit-label{margin:0 0 4px 28px;background:#fffdf8;border:1px solid var(--border);padding:14px 16px;max-width:230px}
+.hang.flip .exhibit-label{order:-1;margin:0 28px 4px 0;justify-self:end}
+.exhibit-label .t{font-size:16px;font-weight:700;line-height:1.4}
+.exhibit-label .m{font-size:12.5px;font-style:italic;color:var(--muted);margin-top:2px}
+.exhibit-label .d{font-family:'Segoe UI',system-ui,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-top:8px}
+.exhibit-label .note{font-size:13px;color:#4a4234;margin-top:8px;font-style:italic}
+.room-nav{display:flex;justify-content:space-between;border-top:3px double var(--border);padding:26px 0 60px;gap:10px;flex-wrap:wrap;
+  font-family:'Segoe UI',system-ui,sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase}
+.room-nav a{color:var(--accent);text-decoration:none}
+.room-nav .dim{color:var(--muted)}
+
+@media(max-width:760px){
+  .arches{gap:8vw;padding-bottom:11vh}
+  .doorway .arch{width:min(190px,37vw)}
+  .hall .banner h1{font-size:22px}
+  .hang,.hang.flip{grid-template-columns:1fr}
+  .exhibit-label,.hang.flip .exhibit-label{order:2;margin:14px 0 0;max-width:100%;justify-self:start}
+  .room-wall-text h1{font-size:30px}
+}
