@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Room III · New York — Notes on Light · Nan Xiao</title>
+<meta name="description" content="Room III of Notes on Light — photographs from New York, the permanent collection.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="room-wrap">
+
+  <div class="room-top">
+    <a href="../photos.html">← Back to the hall</a>
+    <a href="../index.html" class="mid" style="text-decoration:none">Notes on Light · Nan Xiao</a>
+    <a href="room-1.html">Room I →</a>
+  </div>
+
+  <div class="room-wall-text">
+    <div class="roman">Room III</div>
+    <h1>New York</h1>
+    <div class="years">Where I live · 2026</div>
+    <p>The permanent collection — the city you photograph because it never sits still. A curator's note about living and shooting in New York goes here. (Replace this with your own words.)</p>
+  </div>
+
+  <div class="hang">
+    <div class="photo"><img src="../images/one-world-trade-center.jpg" alt="Pointing up at One World Trade Center against a blue sky"></div>
+    <div class="exhibit-label">
+      <div class="t">Looking Up, Downtown</div>
+      <div class="m">Digital photograph</div>
+      <div class="d">New York · 2026</div>
+      <div class="note">Some buildings you photograph; this one you point at.</div>
+    </div>
+  </div>
+
+  <div class="hang flip">
+    <div class="exhibit-label">
+      <div class="t">Nine Jets, One Breath</div>
+      <div class="m">Digital photograph</div>
+      <div class="d">Air show · 2026</div>
+      <div class="note">Smoke trails carving geometry into a summer sky.</div>
+    </div>
+    <div class="photo"><img src="../images/red-arrows-airshow.jpg" alt="Red Arrows jets in formation with smoke trails"></div>
+  </div>
+
+  <div class="room-nav">
+    <a href="room-2.html">← Room II</a>
+    <a href="../photos.html">Back to the hall →</a>
+  </div>
+
+</div>
+
+<div class="lightbox" id="lightbox">
+  <span class="lb-close" id="lb-close">&times;</span>
+  <img id="lb-img" src="" alt="">
+  <div class="lb-cap" id="lb-cap"></div>
+</div>
+
+<script>
+(function(){
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lb-img');
+  var lbCap = document.getElementById('lb-cap');
+  function open(img, label){
+    lbImg.src = img.getAttribute('src');
+    lbImg.alt = img.getAttribute('alt') || '';
+    lbCap.textContent = label || '';
+    lb.classList.add('active');
+  }
+  function close(){ lb.classList.remove('active'); lbImg.src=''; }
+  document.querySelectorAll('.hang').forEach(function(h){
+    var img = h.querySelector('.photo img');
+    var t = h.querySelector('.exhibit-label .t');
+    var d = h.querySelector('.exhibit-label .d');
+    if(img) img.addEventListener('click', function(){
+      open(img, (t?t.textContent:'') + (d?' — '+d.textContent:''));
+    });
+  });
+  lb.addEventListener('click', function(e){ if(e.target===lb) close(); });
+  document.getElementById('lb-close').addEventListener('click', close);
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
+})();
+</script>
+</body>
+</html>

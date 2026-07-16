@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Room II · Miami — Notes on Light · Nan Xiao</title>
+<meta name="description" content="Room II of Notes on Light — photographs from Miami, Florida.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="room-wrap">
+
+  <div class="room-top">
+    <a href="../photos.html">← Back to the hall</a>
+    <a href="../index.html" class="mid" style="text-decoration:none">Notes on Light · Nan Xiao</a>
+    <a href="room-3.html">Room III →</a>
+  </div>
+
+  <div class="room-wall-text">
+    <div class="roman">Room II</div>
+    <h1>Miami</h1>
+    <div class="years">Florida · 2026</div>
+    <p>A curator's note about Miami — the heat, the color of the water, whatever stayed with you after the trip. (Replace this with your own words.)</p>
+  </div>
+
+  <div class="hang">
+    <div class="photo"><img src="../images/miami-sunset-pier.jpg" alt="Sunset over a rock jetty stretching into turquoise water"></div>
+    <div class="exhibit-label">
+      <div class="t">The Jetty at Golden Hour</div>
+      <div class="m">Digital photograph</div>
+      <div class="d">Miami · 2026</div>
+      <div class="note">The rocks walk out into turquoise water until they run out.</div>
+    </div>
+  </div>
+
+  <div class="room-nav">
+    <a href="room-1.html">← Room I</a>
+    <a href="room-3.html">Continue to Room III →</a>
+  </div>
+
+</div>
+
+<div class="lightbox" id="lightbox">
+  <span class="lb-close" id="lb-close">&times;</span>
+  <img id="lb-img" src="" alt="">
+  <div class="lb-cap" id="lb-cap"></div>
+</div>
+
+<script>
+(function(){
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lb-img');
+  var lbCap = document.getElementById('lb-cap');
+  function open(img, label){
+    lbImg.src = img.getAttribute('src');
+    lbImg.alt = img.getAttribute('alt') || '';
+    lbCap.textContent = label || '';
+    lb.classList.add('active');
+  }
+  function close(){ lb.classList.remove('active'); lbImg.src=''; }
+  document.querySelectorAll('.hang').forEach(function(h){
+    var img = h.querySelector('.photo img');
+    var t = h.querySelector('.exhibit-label .t');
+    var d = h.querySelector('.exhibit-label .d');
+    if(img) img.addEventListener('click', function(){
+      open(img, (t?t.textContent:'') + (d?' — '+d.textContent:''));
+    });
+  });
+  lb.addEventListener('click', function(e){ if(e.target===lb) close(); });
+  document.getElementById('lb-close').addEventListener('click', close);
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
+})();
+</script>
+</body>
+</html>

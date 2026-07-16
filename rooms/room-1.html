@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Room I · San Juan — Notes on Light · Nan Xiao</title>
+<meta name="description" content="Room I of Notes on Light — photographs from San Juan, Puerto Rico.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="room-wrap">
+
+  <div class="room-top">
+    <a href="../photos.html">← Back to the hall</a>
+    <a href="../index.html" class="mid" style="text-decoration:none">Notes on Light · Nan Xiao</a>
+    <a href="room-2.html">Room II →</a>
+  </div>
+
+  <div class="room-wall-text">
+    <div class="roman">Room I</div>
+    <h1>San Juan</h1>
+    <div class="years">Puerto Rico · December 2025</div>
+    <p>A curator's note about San Juan goes here — why you went, what the light was doing, and the one thing you kept thinking about after you left. Visitors read this before they see a single photograph, so it sets the mood of the whole room. (Replace this with your own words.)</p>
+  </div>
+
+  <div class="hang">
+    <div class="photo"><img src="../images/el-morro-san-juan.jpg" alt="Arms outstretched on the lawn facing Castillo San Felipe del Morro"></div>
+    <div class="exhibit-label">
+      <div class="t">The Lawn Before El Morro</div>
+      <div class="m">Digital photograph</div>
+      <div class="d">San Juan · 2025</div>
+      <div class="note">Four hundred years of fortress, and the wind coming straight off the Atlantic.</div>
+    </div>
+  </div>
+
+  <div class="room-nav">
+    <span class="dim">You are in Room I</span>
+    <a href="room-2.html">Continue to Room II →</a>
+  </div>
+
+</div>
+
+<div class="lightbox" id="lightbox">
+  <span class="lb-close" id="lb-close">&times;</span>
+  <img id="lb-img" src="" alt="">
+  <div class="lb-cap" id="lb-cap"></div>
+</div>
+
+<script>
+(function(){
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lb-img');
+  var lbCap = document.getElementById('lb-cap');
+  function open(img, label){
+    lbImg.src = img.getAttribute('src');
+    lbImg.alt = img.getAttribute('alt') || '';
+    lbCap.textContent = label || '';
+    lb.classList.add('active');
+  }
+  function close(){ lb.classList.remove('active'); lbImg.src=''; }
+  document.querySelectorAll('.hang').forEach(function(h){
+    var img = h.querySelector('.photo img');
+    var t = h.querySelector('.exhibit-label .t');
+    var d = h.querySelector('.exhibit-label .d');
+    if(img) img.addEventListener('click', function(){
+      open(img, (t?t.textContent:'') + (d?' — '+d.textContent:''));
+    });
+  });
+  lb.addEventListener('click', function(e){ if(e.target===lb) close(); });
+  document.getElementById('lb-close').addEventListener('click', close);
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
+})();
+</script>
+</body>
+</html>
