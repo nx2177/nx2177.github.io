@@ -111,7 +111,8 @@ footer.site-footer a{color:var(--accent)}
 /* ===================== The Exhibition ===================== */
 
 /* --- Museum hall (photos.html) --- */
-.hall{position:relative;min-height:82vh;display:flex;flex-direction:column;overflow:hidden;margin:0 -24px;
+.hall{position:relative;min-height:88vh;display:flex;flex-direction:column;overflow:hidden;
+  width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);
   background:linear-gradient(#f6efdf 0%, #efe4cd 46%, #e6d8ba 62%)}
 .hall::before{content:"";position:absolute;top:-18vh;left:50%;transform:translateX(-50%);
   width:110vw;height:52vh;background:radial-gradient(ellipse at center,
