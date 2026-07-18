@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>San Juan — The Caribbean · Notes on Light</title>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<div class="room-wrap">
+
+  <div class="room-top">
+    <a href="../room-1.html">← Back to the chart</a>
+    <a href="../../index.html" class="mid" style="text-decoration:none">Notes on Light · Nan Xiao</a>
+    <a href="punta-cana.html">Next port: Punta Cana →</a>
+  </div>
+
+  <div class="room-wall-text">
+    <div class="roman">Port of Call · ⚓ Home Port</div>
+    <h1>San Juan</h1>
+    <div class="years">Puerto Rico · March 2025</div>
+    <p>Where the voyage began and ended. A note about San Juan goes here — the old fortress, the trade winds, the last land before seven days at sea. (Replace this with your own words.)</p>
+  </div>
+
+  <div class="hang">
+    <div class="photo"><img src="../../images/caribbean/el-morro-san-juan.jpg" alt="Arms outstretched on the lawn facing Castillo San Felipe del Morro"></div>
+    <div class="exhibit-label">
+      <div class="t">The Lawn Before El Morro</div>
+      <div class="m">Digital photograph</div>
+      <div class="d">San Juan · 2025</div>
+      <div class="note">Four hundred years of fortress, and the wind coming straight off the Atlantic.</div>
+    </div>
+  </div>
+
+  <div class="hang flip">
+    <div class="exhibit-label">
+      <div class="t">A Village by the Sea</div>
+      <div class="m">Digital photograph</div>
+      <div class="d">The Caribbean · 2025</div>
+      <div class="note">Painted roofs stacked down to the water, and one sailboat with the whole horizon to itself.</div>
+    </div>
+    <div class="photo"><img src="../../images/caribbean/island-village.jpg" alt="Colorful village rooftops above turquoise Caribbean water with a distant sailboat"></div>
+  </div>
+
+  <div class="room-nav">
+    <a href="../room-1.html">← The chart</a>
+    <a href="punta-cana.html">Punta Cana →</a>
+  </div>
+
+</div>
+
+<div class="lightbox" id="lightbox">
+  <span class="lb-close" id="lb-close">&times;</span>
+  <img id="lb-img" src="" alt="">
+  <div class="lb-cap" id="lb-cap"></div>
+</div>
+<script>
+(function(){
+  var lb=document.getElementById('lightbox'),li=document.getElementById('lb-img'),lc=document.getElementById('lb-cap');
+  function close(){lb.classList.remove('active');li.src='';}
+  document.querySelectorAll('.hang').forEach(function(h){
+    var img=h.querySelector('.photo img'),t=h.querySelector('.exhibit-label .t'),d=h.querySelector('.exhibit-label .d');
+    if(img) img.addEventListener('click',function(){
+      li.src=img.src;li.alt=img.alt||'';lc.textContent=(t?t.textContent:'')+(d?' — '+d.textContent:'');lb.classList.add('active');
+    });
+  });
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  document.getElementById('lb-close').addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
+</body>
+</html>
