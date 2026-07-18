@@ -4,81 +4,220 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Room I · The Caribbean — Notes on Light · Nan Xiao</title>
-<meta name="description" content="Room I of Notes on Light — photographs from the Caribbean.">
-<link rel="stylesheet" href="../css/style.css">
+<meta name="description" content="Room I of Notes on Light — a nine-day Caribbean cruise: San Juan, Punta Cana, Aruba, Curaçao, St. Lucia, St. Kitts.">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:Georgia,serif;overflow-x:hidden;background:#2e8fc0;color:#0d3a5c}
+
+  .sea{position:relative;min-height:100vh;overflow:hidden;
+    background:linear-gradient(#aadcf2 0%, #6db9de 46%, #2e8fc0 52%, #16699a 100%)}
+  .sea .photo-bg{position:absolute;inset:0;
+    background:url('https://nx2177.github.io/images/caribbean/6e71a5e9-28cc-418f-a2a2-2e45b5ea5e36.JPG') center/cover no-repeat}
+  .sea .photo-bg::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(rgba(255,255,255,.10), rgba(255,255,255,0) 40%)}
+
+  /* drifting clouds */
+  .cloud{position:absolute;z-index:2;filter:blur(2px);opacity:.9;animation:cloudDrift linear infinite;pointer-events:none}
+  .cloud i{position:absolute;background:#fff;border-radius:50%}
+  @keyframes cloudDrift{from{transform:translateX(-16vw)}to{transform:translateX(116vw)}}
+
+  .waves{position:absolute;left:0;right:0;bottom:0;height:190px;pointer-events:none;z-index:3}
+  .waves svg{position:absolute;bottom:0;left:0;width:200%;height:100%}
+  .w1{animation:drift 26s linear infinite;opacity:.5}
+  .w2{animation:drift 17s linear infinite reverse;opacity:.4;bottom:-30px}
+  @keyframes drift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  .bar{position:absolute;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:center;
+    padding:20px 28px;font-family:'Segoe UI',system-ui,sans-serif;font-size:11.5px;letter-spacing:2px;text-transform:uppercase}
+  .bar a{color:#0d3a5c;text-decoration:none;background:rgba(255,255,255,.55);padding:6px 12px;border-radius:4px}
+  .bar a:hover{background:rgba(255,255,255,.9)}
+
+  .room-head{position:absolute;top:74px;left:44px;z-index:5;max-width:310px}
+  .room-head .roman{font-family:'Segoe UI',system-ui,sans-serif;font-size:11px;letter-spacing:4px;color:#7a2f12;text-transform:uppercase}
+  .room-head h1{font-size:40px;line-height:1.15;margin:6px 0 10px;color:#0d3a5c;text-shadow:0 1px 0 rgba(255,255,255,.6),0 2px 16px rgba(255,255,255,.45)}
+  .room-head p{font-style:italic;color:#1d4a70;font-size:15.5px;text-shadow:0 1px 8px rgba(255,255,255,.5)}
+  .room-head .hint{margin-top:14px;font-family:'Segoe UI',system-ui,sans-serif;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:#7a2f12}
+
+  .chart{position:absolute;z-index:4;right:11vw;top:42%;transform:translateY(-50%);
+    width:min(48vw,600px);filter:drop-shadow(0 22px 40px rgba(4,30,52,.55))}
+  .chart .map-wrap{position:relative}
+  .chart canvas{width:100%;height:auto;display:block}
+  .chart .missing{display:none;padding:40px 30px;background:#ecdcae;border:2px dashed #8a6f3e;border-radius:6px;
+    color:#5a4426;font-style:italic;text-align:center;font-size:15px}
+  .chart.noimg .missing{display:block}
+
+  .hs{position:absolute;width:8.5%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;cursor:pointer;z-index:5}
+  .hs::before{content:"";position:absolute;inset:12%;border-radius:50%;transition:all .3s}
+  .hs:hover::before{background:radial-gradient(circle, rgba(255,224,130,.85) 0%, rgba(255,200,80,.35) 55%, transparent 75%);
+    box-shadow:0 0 22px 6px rgba(255,200,80,.55)}
+  .hs .tip{position:absolute;left:50%;bottom:108%;transform:translateX(-50%);white-space:nowrap;
+    font-family:'Segoe UI',system-ui,sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+    background:#4a3a1e;color:#f5e7c0;border-radius:3px;padding:4px 10px;opacity:0;transition:opacity .25s;pointer-events:none}
+  .hs:hover .tip{opacity:1}
+
+  .ship{position:absolute;z-index:6;left:9vw;bottom:5vh;width:min(38vw,430px);cursor:pointer;
+    animation:bob 7s ease-in-out infinite;transform-origin:50% 85%;text-decoration:none;display:block}
+  .ship svg{width:100%;height:auto;display:block;transition:filter .3s}
+  .ship:hover svg{filter:drop-shadow(0 0 12px rgba(255,240,180,.95)) drop-shadow(0 0 30px rgba(255,210,110,.65))}
+  .ship .label{text-align:center;font-family:'Segoe UI',system-ui,sans-serif;font-size:10.5px;letter-spacing:2.5px;
+    text-transform:uppercase;color:rgba(13,58,92,0);transition:color .3s;margin-top:6px;text-shadow:0 1px 6px rgba(255,255,255,.6)}
+  .ship:hover .label{color:#0d3a5c}
+  @keyframes bob{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-8px) rotate(1.2deg)}}
+
+  @media(max-width:900px){
+    .chart{position:relative;right:auto;top:auto;transform:none;width:94vw;margin:170px auto 20px}
+    .room-head{position:relative;top:auto;left:auto;margin:90px 24px 0}
+    .ship{position:relative;left:24px;bottom:auto;margin:16px 0 70px;width:70vw}
+  }
+</style>
 </head>
 <body>
-<div class="room-wrap">
+<div class="sea">
+  <div class="photo-bg"></div>
 
-  <div class="room-top">
+  <div class="cloud" style="top:5%;left:-16vw;animation-duration:95s">
+    <i style="width:120px;height:38px;left:0;top:14px"></i><i style="width:70px;height:44px;left:34px;top:0"></i><i style="width:60px;height:34px;left:84px;top:8px"></i>
+  </div>
+  <div class="cloud" style="top:14%;left:-16vw;animation-duration:130s;animation-delay:-40s;opacity:.75">
+    <i style="width:150px;height:42px;left:0;top:18px"></i><i style="width:80px;height:52px;left:44px;top:0"></i><i style="width:66px;height:38px;left:104px;top:10px"></i>
+  </div>
+  <div class="cloud" style="top:26%;left:-16vw;animation-duration:110s;animation-delay:-70s;opacity:.6">
+    <i style="width:100px;height:30px;left:0;top:12px"></i><i style="width:56px;height:36px;left:30px;top:0"></i>
+  </div>
+
+  <div class="bar">
     <a href="../photos.html">← Back to the hall</a>
-    <a href="../index.html" class="mid" style="text-decoration:none">Notes on Light · Nan Xiao</a>
+    <a href="../index.html">Notes on Light · Nan Xiao</a>
     <a href="room-2.html">Room II →</a>
   </div>
 
-  <div class="room-wall-text">
+  <div class="room-head">
     <div class="roman">Room I</div>
     <h1>The Caribbean</h1>
-    <div class="years">2025</div>
-    <p>A curator's note about the Caribbean goes here — the heat, the color, the sea that changes blue every hour. (Replace this with your own words.)</p>
+    <p>Nine days, one ship, six ports. March 2025 — the sea kept changing blue.</p>
+    <div class="hint">Hover the chart · Click a port to enter</div>
   </div>
 
-  <div class="hang">
-    <div class="photo"><img src="../images/caribbean/el-morro-san-juan.jpg" alt="Arms outstretched on the lawn facing Castillo San Felipe del Morro"></div>
-    <div class="exhibit-label">
-      <div class="t">The Lawn Before El Morro</div>
-      <div class="m">Digital photograph</div>
-      <div class="d">San Juan · 2025</div>
-      <div class="note">Four hundred years of fortress, and the wind coming straight off the Atlantic.</div>
+  <div class="chart" id="chart">
+    <div class="map-wrap">
+      <canvas id="mapCanvas"></canvas>
+      <div class="missing">Chart could not be loaded — please check your connection and refresh.</div>
+
+      <a class="hs" href="caribbean/san-juan.html" style="left:50.3%;top:29.4%"><span class="tip">San Juan ⚓</span></a>
+      <a class="hs" href="caribbean/punta-cana.html" style="left:32.9%;top:29.9%"><span class="tip">Punta Cana</span></a>
+      <a class="hs" href="caribbean/st-kitts.html" style="left:69.8%;top:37.3%"><span class="tip">St. Kitts</span></a>
+      <a class="hs" href="caribbean/st-lucia.html" style="left:80.2%;top:62.1%"><span class="tip">St. Lucia</span></a>
+      <a class="hs" href="caribbean/aruba.html" style="left:26.5%;top:72.4%"><span class="tip">Aruba</span></a>
+      <a class="hs" href="caribbean/curacao.html" style="left:33.1%;top:75.3%"><span class="tip">Curaçao</span></a>
     </div>
   </div>
 
-  <div class="hang flip">
-    <div class="exhibit-label">
-      <div class="t">A Village by the Sea</div>
-      <div class="m">Digital photograph</div>
-      <div class="d">The Caribbean · 2025</div>
-      <div class="note">Painted roofs stacked down to the water, and one sailboat with the whole horizon to itself.</div>
-    </div>
-    <div class="photo"><img src="../images/caribbean/island-village.jpg" alt="Colorful village rooftops above turquoise Caribbean water with a distant sailboat"></div>
+  <a class="ship" href="caribbean/at-sea.html">
+    <svg viewBox="0 0 480 210" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="240" cy="196" rx="220" ry="9" fill="rgba(255,255,255,.4)"/>
+      <path d="M20,192 Q120,182 240,190 Q360,198 462,186" stroke="rgba(255,255,255,.6)" stroke-width="3" fill="none"/>
+      <path d="M18,138 L400,138 Q436,140 456,120 Q462,150 430,178 L74,178 Q34,168 18,138 Z" fill="#14304a"/>
+      <path d="M380,142 Q412,146 432,132 Q436,158 408,170 Q382,174 366,166 Q390,160 380,142 Z" fill="#e8eef4" opacity=".9"/>
+      <path d="M352,150 Q372,166 398,168" stroke="#9fc4dd" stroke-width="5" fill="none" opacity=".8"/>
+      <g fill="#7ea4bd" opacity=".9">
+        <circle cx="60" cy="152" r="2.4"/><circle cx="78" cy="152" r="2.4"/><circle cx="96" cy="152" r="2.4"/><circle cx="114" cy="152" r="2.4"/><circle cx="132" cy="152" r="2.4"/><circle cx="150" cy="152" r="2.4"/><circle cx="168" cy="152" r="2.4"/><circle cx="186" cy="152" r="2.4"/><circle cx="204" cy="152" r="2.4"/><circle cx="222" cy="152" r="2.4"/><circle cx="240" cy="152" r="2.4"/><circle cx="258" cy="152" r="2.4"/><circle cx="276" cy="152" r="2.4"/><circle cx="294" cy="152" r="2.4"/><circle cx="312" cy="152" r="2.4"/><circle cx="330" cy="152" r="2.4"/>
+      </g>
+      <path d="M40,120 L404,120 Q426,120 438,126 L440,138 L18,138 Q30,126 40,120 Z" fill="#f4f2ec"/>
+      <path d="M48,102 L396,102 Q420,102 430,112 L432,120 L40,120 Q42,108 48,102 Z" fill="#e9e7df"/>
+      <path d="M56,84 L390,84 Q412,84 422,94 L424,102 L48,102 Q50,90 56,84 Z" fill="#f4f2ec"/>
+      <path d="M66,66 L380,66 Q400,66 410,76 L412,84 L56,84 Q58,72 66,66 Z" fill="#e9e7df"/>
+      <path d="M80,48 L360,48 Q378,48 388,58 L390,66 L66,66 Q70,54 80,48 Z" fill="#f4f2ec"/>
+      <path d="M110,32 L330,32 Q346,32 354,42 L356,48 L80,48 Q88,36 110,32 Z" fill="#e9e7df"/>
+      <g fill="#8fa9bb" opacity=".85">
+        <rect x="58" y="124" width="370" height="5" rx="2.5"/>
+        <rect x="64" y="106" width="356" height="5" rx="2.5"/>
+        <rect x="72" y="88" width="340" height="5" rx="2.5"/>
+        <rect x="82" y="70" width="318" height="5" rx="2.5"/>
+        <rect x="96" y="52" width="282" height="5" rx="2.5"/>
+        <rect x="122" y="36" width="222" height="5" rx="2.5"/>
+      </g>
+      <path d="M196,22 Q220,8 244,22 L240,32 L200,32 Z" fill="#bcd6e6" stroke="#8fa9bb" stroke-width="1.5"/>
+      <path d="M96,10 L128,10 L136,32 L92,32 Z" fill="#12283e"/>
+      <path d="M104,2 L120,2 L122,10 L102,10 Z" fill="#1d3c58"/>
+      <line x1="366" y1="14" x2="366" y2="48" stroke="#4a6478" stroke-width="3"/>
+      <line x1="356" y1="22" x2="376" y2="22" stroke="#4a6478" stroke-width="2"/>
+      <g fill="#c8562f">
+        <rect x="120" y="128" width="16" height="5" rx="2.5"/><rect x="146" y="128" width="16" height="5" rx="2.5"/><rect x="172" y="128" width="16" height="5" rx="2.5"/><rect x="198" y="128" width="16" height="5" rx="2.5"/><rect x="224" y="128" width="16" height="5" rx="2.5"/><rect x="250" y="128" width="16" height="5" rx="2.5"/><rect x="276" y="128" width="16" height="5" rx="2.5"/><rect x="302" y="128" width="16" height="5" rx="2.5"/>
+      </g>
+    </svg>
+    <div class="label">Board the ship · life at sea →</div>
+  </a>
+
+  <div class="waves">
+    <svg class="w1" viewBox="0 0 1600 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,70 Q100,40 200,70 T400,70 T600,70 T800,70 T1000,70 T1200,70 T1400,70 T1600,70 L1600,200 L0,200 Z" fill="rgba(20,90,140,.55)"/>
+    </svg>
+    <svg class="w2" viewBox="0 0 1600 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,100 Q120,70 240,100 T480,100 T720,100 T960,100 T1200,100 T1440,100 T1680,100 L1680,200 L0,200 Z" fill="rgba(10,60,100,.5)"/>
+    </svg>
   </div>
-
-  <div class="room-nav">
-    <span class="dim">You are in Room I</span>
-    <a href="room-2.html">Continue to Room II →</a>
-  </div>
-
-</div>
-
-<div class="lightbox" id="lightbox">
-  <span class="lb-close" id="lb-close">&times;</span>
-  <img id="lb-img" src="" alt="">
-  <div class="lb-cap" id="lb-cap"></div>
 </div>
 
 <script>
+/* cutout: remove pale margin + soft shadows around the scroll */
 (function(){
-  var lb = document.getElementById('lightbox');
-  var lbImg = document.getElementById('lb-img');
-  var lbCap = document.getElementById('lb-cap');
-  function open(img, label){
-    lbImg.src = img.getAttribute('src');
-    lbImg.alt = img.getAttribute('alt') || '';
-    lbCap.textContent = label || '';
-    lb.classList.add('active');
-  }
-  function close(){ lb.classList.remove('active'); lbImg.src=''; }
-  document.querySelectorAll('.hang').forEach(function(h){
-    var img = h.querySelector('.photo img');
-    var t = h.querySelector('.exhibit-label .t');
-    var d = h.querySelector('.exhibit-label .d');
-    if(img) img.addEventListener('click', function(){
-      open(img, (t?t.textContent:'') + (d?' — '+d.textContent:''));
-    });
-  });
-  lb.addEventListener('click', function(e){ if(e.target===lb) close(); });
-  document.getElementById('lb-close').addEventListener('click', close);
-  document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
+  var URL_MAP = 'https://nx2177.github.io/images/caribbean/b1a013be-2b47-47ba-929a-feb5c185b1e3.png';
+  var canvas = document.getElementById('mapCanvas');
+  var img = new Image();
+  img.crossOrigin = 'anonymous';
+  img.onload = function(){
+    var w = img.naturalWidth, h = img.naturalHeight;
+    canvas.width = w; canvas.height = h;
+    var ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0);
+    try{
+      var im = ctx.getImageData(0, 0, w, h), d = im.data;
+      function px(x,y){ var i=(y*w+x)*4; return [d[i],d[i+1],d[i+2]]; }
+      var corners = [px(2,2), px(w-3,2), px(2,h-3), px(w-3,h-3)];
+      var bg = [0,0,0];
+      corners.forEach(function(c){ bg[0]+=c[0]/4; bg[1]+=c[1]/4; bg[2]+=c[2]/4; });
+      var TOL = 48;
+      function isBg(i){
+        var r=d[i], g=d[i+1], b=d[i+2];
+        var dr=r-bg[0], dg=g-bg[1], db=b-bg[2];
+        if(dr*dr+dg*dg+db*db < TOL*TOL) return true;
+        /* also treat bright, low-saturation pixels (margin shadows) as background;
+           parchment is warm/saturated (large r-b spread) so it survives */
+        var mx=Math.max(r,g,b), mn=Math.min(r,g,b);
+        return (mn>178 && (mx-mn)<30);
+      }
+      var visited = new Uint8Array(w*h);
+      var stack = [];
+      for(var x=0;x<w;x++){ stack.push(x); stack.push((h-1)*w+x); }
+      for(var y=0;y<h;y++){ stack.push(y*w); stack.push(y*w+w-1); }
+      while(stack.length){
+        var p = stack.pop();
+        if(visited[p]) continue;
+        visited[p] = 1;
+        var i = p*4;
+        if(!isBg(i)) continue;
+        d[i+3] = 0;
+        var py = (p/w)|0, pxx = p%w;
+        if(pxx>0) stack.push(p-1);
+        if(pxx<w-1) stack.push(p+1);
+        if(py>0) stack.push(p-w);
+        if(py<h-1) stack.push(p+w);
+      }
+      var alpha = new Uint8Array(w*h);
+      for(var p2=0;p2<w*h;p2++) alpha[p2] = d[p2*4+3];
+      for(var yy=1;yy<h-1;yy++){
+        for(var xx=1;xx<w-1;xx++){
+          var p3 = yy*w+xx;
+          if(alpha[p3]===255 && (alpha[p3-1]===0||alpha[p3+1]===0||alpha[p3-w]===0||alpha[p3+w]===0)){
+            d[p3*4+3] = 140;
+          }
+        }
+      }
+      ctx.putImageData(im, 0, 0);
+    }catch(e){}
+  };
+  img.onerror = function(){ document.getElementById('chart').classList.add('noimg'); };
+  img.src = URL_MAP;
 })();
 </script>
 </body>
