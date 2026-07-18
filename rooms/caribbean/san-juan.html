@@ -19,11 +19,11 @@
     <div class="roman">Port of Call · ⚓ Home Port</div>
     <h1>San Juan</h1>
     <div class="years">Puerto Rico · March 2025</div>
-    <p>Where the voyage began and ended. A note about San Juan goes here — the old fortress, the trade winds, the last land before seven days at sea. (Replace this with your own words.)</p>
+    <p>Where the voyage began and ended — old walls, pastel streets, and the widest lawn in the Caribbean. (Replace this with your own words.)</p>
   </div>
 
   <div class="hang">
-    <div class="photo"><img src="../../images/caribbean/el-morro-san-juan.jpg" alt="Arms outstretched on the lawn facing Castillo San Felipe del Morro"></div>
+    <div class="photo"><img src="../../images/caribbean/san-juan/el-morro-san-juan.jpg" alt="Arms outstretched on the lawn facing Castillo San Felipe del Morro"></div>
     <div class="exhibit-label">
       <div class="t">The Lawn Before El Morro</div>
       <div class="m">Digital photograph</div>
@@ -34,12 +34,72 @@
 
   <div class="hang flip">
     <div class="exhibit-label">
-      <div class="t">A Village by the Sea</div>
+      <div class="t">The Fortress on the Green</div>
       <div class="m">Digital photograph</div>
-      <div class="d">The Caribbean · 2025</div>
-      <div class="note">Painted roofs stacked down to the water, and one sailboat with the whole horizon to itself.</div>
+      <div class="d">San Juan · 2025</div>
+      <div class="note">El Morro at full length, guarding a harbor no one attacks anymore.</div>
     </div>
-    <div class="photo"><img src="../../images/caribbean/island-village.jpg" alt="Colorful village rooftops above turquoise Caribbean water with a distant sailboat"></div>
+    <div class="photo"><img src="../../images/caribbean/san-juan/IMG_4060.jpg" alt="Wide view of El Morro fortress across the lawn"></div>
+  </div>
+
+  <div class="hang">
+    <div class="photo"><img src="../../images/caribbean/san-juan/IMG_4034.jpg" alt="A lone walker on a vast green lawn under a single cloud"></div>
+    <div class="exhibit-label">
+      <div class="t">One Walker, One Cloud</div>
+      <div class="m">Digital photograph</div>
+      <div class="d">San Juan · 2025</div>
+      <div class="note">Green, blue, and one of each.</div>
+    </div>
+  </div>
+
+  <div class="hang flip">
+    <div class="exhibit-label">
+      <div class="t">The Garita</div>
+      <div class="m">Digital photograph</div>
+      <div class="d">San Juan · 2025</div>
+      <div class="note">Sentry boxes that watched three empires sail past.</div>
+    </div>
+    <div class="photo"><img src="../../images/caribbean/san-juan/IMG_4021.jpg" alt="Stone sentry box on fortress walls above the sea"></div>
+  </div>
+
+  <div class="hang">
+    <div class="photo"><img src="../../images/caribbean/san-juan/IMG_4041.jpg" alt="Red-domed chapel behind the fortress wall against the sea"></div>
+    <div class="exhibit-label">
+      <div class="t">The Red Dome</div>
+      <div class="m">Digital photograph</div>
+      <div class="d">San Juan · 2025</div>
+      <div class="note">Beyond the wall, the cemetery chapel and the open Atlantic.</div>
+    </div>
+  </div>
+
+  <div class="hang flip">
+    <div class="exhibit-label">
+      <div class="t">Streets of Old San Juan</div>
+      <div class="m">Digital photograph</div>
+      <div class="d">San Juan · 2025</div>
+      <div class="note">Pastel walls, cobblestones, and the sea at the end of every street.</div>
+    </div>
+    <div class="photo"><img src="../../images/caribbean/san-juan/IMG_3940.jpg" alt="Narrow old-town street with pastel buildings sloping down to the sea"></div>
+  </div>
+
+  <div class="hang">
+    <div class="photo"><img src="../../images/caribbean/san-juan/IMG_5100.jpg" alt="Sitting on the old brick wall holding a colorful umbrella, facing the sea"></div>
+    <div class="exhibit-label">
+      <div class="t">The Umbrella</div>
+      <div class="m">Digital photograph</div>
+      <div class="d">San Juan · 2025</div>
+      <div class="note">On the old brick wall, holding a small sun.</div>
+    </div>
+  </div>
+
+  <div class="hang flip">
+    <div class="exhibit-label">
+      <div class="t">Lamps by the Sea Road</div>
+      <div class="m">Digital photograph</div>
+      <div class="d">San Juan · 2025</div>
+      <div class="note">Street lamps queue along the wall; a school bus climbs the hill.</div>
+    </div>
+    <div class="photo"><img src="../../images/caribbean/san-juan/IMG_5105.jpg" alt="Street lamps along the sea road with a yellow bus"></div>
   </div>
 
   <div class="room-nav">
@@ -54,20 +114,6 @@
   <img id="lb-img" src="" alt="">
   <div class="lb-cap" id="lb-cap"></div>
 </div>
-<script>
-(function(){
-  var lb=document.getElementById('lightbox'),li=document.getElementById('lb-img'),lc=document.getElementById('lb-cap');
-  function close(){lb.classList.remove('active');li.src='';}
-  document.querySelectorAll('.hang').forEach(function(h){
-    var img=h.querySelector('.photo img'),t=h.querySelector('.exhibit-label .t'),d=h.querySelector('.exhibit-label .d');
-    if(img) img.addEventListener('click',function(){
-      li.src=img.src;li.alt=img.alt||'';lc.textContent=(t?t.textContent:'')+(d?' — '+d.textContent:'');lb.classList.add('active');
-    });
-  });
-  lb.addEventListener('click',function(e){if(e.target===lb)close();});
-  document.getElementById('lb-close').addEventListener('click',close);
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
-})();
-</script>
+<script src="lightbox.js"></script>
 </body>
 </html>
