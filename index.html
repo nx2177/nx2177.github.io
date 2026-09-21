@@ -29,6 +29,53 @@
     <div class="byline">New York, NY · <a href="mailto:nx2177@columbia.edu" style="color:var(--muted)">nx2177@columbia.edu</a></div>
   </section>
 
+  <section class="studio-block" aria-label="The studio">
+    <div class="section-label">The Studio</div>
+    <p class="studio-hint">Click the computer for engineering work, or the camera for photographs.</p>
+    <div class="studio-viewport" id="studio">
+      <div class="studio-scene">
+        <div class="studio-room">
+          <div class="studio-ceil" aria-hidden="true"></div>
+          <div class="studio-wall studio-back" aria-hidden="true">
+            <div class="studio-frame"></div>
+            <div class="studio-window"><span></span><span></span></div>
+          </div>
+          <div class="studio-wall studio-left" aria-hidden="true"></div>
+          <div class="studio-floor" aria-hidden="true"></div>
+          <div class="studio-desk">
+            <i class="desk-top" aria-hidden="true"></i>
+            <i class="desk-front" aria-hidden="true"></i>
+            <i class="desk-side" aria-hidden="true"></i>
+            <i class="desk-leg l1" aria-hidden="true"></i>
+            <i class="desk-leg l2" aria-hidden="true"></i>
+            <div class="studio-lamp" aria-hidden="true">
+              <i class="lamp-arm"></i>
+              <i class="lamp-head"></i>
+              <i class="lamp-glow"></i>
+            </div>
+            <a class="studio-pc" href="engineering-work.html" aria-label="Open Engineering Work">
+              <i class="pc-screen">
+                <i class="pc-code"></i>
+              </i>
+              <i class="pc-bezel"></i>
+              <i class="pc-neck"></i>
+              <i class="pc-base"></i>
+              <i class="pc-keys"></i>
+              <span class="studio-label">Engineering Work</span>
+            </a>
+            <a class="studio-cam" href="photos.html" aria-label="Open Photos">
+              <i class="cam-body"></i>
+              <i class="cam-top"></i>
+              <i class="cam-lens"></i>
+              <i class="cam-ring"></i>
+              <span class="studio-label">Photos</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <hr class="rule">
 
   <div class="two-col">
@@ -72,5 +119,23 @@
     © 2026 Nan Xiao · <a href="mailto:nx2177@columbia.edu">Email</a> · <a href="https://github.com/nx2177">GitHub</a> · <a href="https://linkedin.com/in/nan-xiao-bb4805327">LinkedIn</a>
   </footer>
 </div>
+<script>
+(function(){
+  var vp = document.getElementById('studio');
+  if (!vp || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var scene = vp.querySelector('.studio-scene');
+  vp.addEventListener('pointermove', function(e){
+    var r = vp.getBoundingClientRect();
+    var x = (e.clientX - r.left) / r.width - 0.5;
+    var y = (e.clientY - r.top) / r.height - 0.5;
+    scene.style.setProperty('--tilt-x', (-y * 8).toFixed(2) + 'deg');
+    scene.style.setProperty('--tilt-y', (x * 12).toFixed(2) + 'deg');
+  });
+  vp.addEventListener('pointerleave', function(){
+    scene.style.setProperty('--tilt-x', '0deg');
+    scene.style.setProperty('--tilt-y', '0deg');
+  });
+})();
+</script>
 </body>
 </html>

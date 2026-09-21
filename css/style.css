@@ -34,6 +34,160 @@ a{color:var(--accent)}
 .byline{margin-top:16px;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:2px;font-family:'Segoe UI',system-ui,sans-serif}
 .two-col{display:grid;grid-template-columns:1.2fr .8fr;gap:36px}
 
+/* Home studio (CSS 3D room) */
+.studio-block{margin:36px 0 8px}
+.studio-hint{font-size:15px;color:#4a4234;font-style:italic;margin:-8px 0 12px}
+.studio-viewport{
+  height:500px;perspective:1100px;perspective-origin:50% 38%;overflow:hidden;
+  border:1px solid var(--border);border-radius:6px;
+  background:radial-gradient(ellipse at 30% 18%, rgba(255,248,230,.9), transparent 46%),
+    linear-gradient(#d7c7a8 0%, #e9ddc6 42%, #cbb892 100%);
+  cursor:default;
+}
+.studio-scene{
+  width:400px;height:240px;margin:100px auto 0;position:relative;
+  transform-style:preserve-3d;
+  transform:rotateX(calc(8deg + var(--tilt-x, 0deg))) rotateY(calc(-32deg + var(--tilt-y, 0deg)));
+  transform-origin:50% 100%;
+  transition:transform .35s ease;
+}
+.studio-viewport:hover .studio-scene{transition:transform .12s ease-out}
+.studio-room,.studio-room *{transform-style:preserve-3d}
+.studio-room{width:400px;height:240px;position:relative}
+.studio-wall,.studio-floor,.studio-ceil,.studio-desk,.studio-pc,.studio-cam,.studio-lamp{position:absolute}
+.studio-back{
+  inset:0;background:linear-gradient(#f4ecdc, #e6d8c0);
+  box-shadow:inset 0 0 40px rgba(90,70,40,.08);
+}
+.studio-window{
+  position:absolute;right:36px;top:36px;width:92px;height:118px;
+  background:linear-gradient(180deg, #f3e2b0, #c9d6c2 55%, #9eb7a8);
+  border:7px solid #d9cbb2;box-shadow:0 0 28px rgba(255,236,190,.55);
+  display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:5px;
+}
+.studio-window span{background:linear-gradient(180deg, rgba(255,255,255,.28), transparent 40%, rgba(80,90,70,.12))}
+.studio-frame{
+  position:absolute;left:34px;top:52px;width:64px;height:82px;
+  background:linear-gradient(160deg, #7fa8c9, #3d6a8a);border:6px solid #efe6d4;
+  box-shadow:0 8px 16px rgba(60,40,20,.18);
+}
+.studio-left{
+  width:300px;height:240px;left:0;top:0;
+  background:linear-gradient(90deg, #d8c9ae, #efe4ce);
+  transform-origin:left center;
+  transform:rotateY(90deg);
+}
+.studio-floor{
+  width:400px;height:300px;left:0;top:240px;
+  background:repeating-linear-gradient(90deg, #c9a56e 0 34px, #b89058 34px 36px, #d1b07a 36px 70px);
+  transform-origin:top center;
+  transform:rotateX(90deg);
+  box-shadow:inset 0 0 50px rgba(80,50,20,.12);
+}
+.studio-ceil{display:none}
+.studio-desk{left:70px;top:226px;width:260px;height:14px;transform:translateZ(150px)}
+.desk-top{
+  display:block;position:absolute;left:0;bottom:14px;width:260px;height:110px;
+  background:linear-gradient(#c0894e, #a66c34);
+  transform-origin:bottom center;
+  transform:rotateX(-90deg);
+  box-shadow:0 10px 20px rgba(40,25,10,.22);
+}
+.desk-front{
+  display:block;position:absolute;left:0;top:0;width:260px;height:14px;
+  background:linear-gradient(#8a5428, #6e3f1c);
+}
+.desk-side{
+  display:block;position:absolute;right:0;top:0;width:110px;height:14px;
+  background:#7c4a22;
+  transform-origin:right center;
+  transform:rotateY(-90deg);
+}
+.desk-leg{
+  display:block;position:absolute;width:8px;height:48px;background:#5c3516;top:14px;
+}
+.desk-leg.l1{left:12px}
+.desk-leg.l2{right:12px;transform:translateZ(-8px)}
+.studio-lamp{left:18px;top:-78px;width:16px;height:70px;transform:translateZ(-70px);pointer-events:none}
+.lamp-arm{display:block;width:6px;height:62px;margin-left:6px;background:#6a4a2a;border-radius:2px;transform:rotate(-18deg)}
+.lamp-head{display:block;position:absolute;left:-6px;top:-4px;width:28px;height:16px;border-radius:40% 40% 20% 20%;
+  background:#4a3420;transform:rotate(-28deg)}
+.lamp-glow{display:block;position:absolute;left:-18px;top:10px;width:70px;height:70px;
+  background:radial-gradient(circle, rgba(255,220,140,.45), transparent 68%);pointer-events:none}
+.studio-pc{
+  left:58px;top:-102px;width:132px;height:108px;text-decoration:none;color:inherit;
+  transform:translateZ(-48px);display:block;cursor:pointer;
+}
+.pc-bezel{
+  display:block;position:absolute;left:8px;top:0;width:112px;height:74px;
+  background:#2a2419;border-radius:4px 4px 3px 3px;
+  box-shadow:0 10px 16px rgba(40,25,10,.28), 0 0 0 1px #1a1610;
+}
+.pc-screen{
+  display:block;position:absolute;left:14px;top:6px;width:100px;height:58px;border-radius:2px;overflow:hidden;z-index:1;
+  background:linear-gradient(160deg, #1c2a24, #14201c);
+  box-shadow:inset 0 0 12px rgba(0,0,0,.45);
+}
+.pc-code{
+  display:block;height:100%;
+  background:repeating-linear-gradient(180deg,
+    transparent 0 5px,
+    rgba(196,180,140,.22) 5px 7px,
+    transparent 7px 11px,
+    rgba(164,69,31,.45) 11px 13px,
+    transparent 13px 16px);
+  opacity:.9;
+}
+.studio-pc:hover .pc-screen,.studio-pc:focus-visible .pc-screen{
+  background:linear-gradient(160deg, #24382e, #1a2c24);
+  box-shadow:inset 0 0 14px rgba(255,236,190,.12), 0 0 18px rgba(255,220,150,.2);
+}
+.pc-neck{display:block;position:absolute;left:64px;top:72px;width:8px;height:14px;background:#3a3226}
+.pc-base{display:block;position:absolute;left:40px;top:84px;width:56px;height:6px;border-radius:3px;background:#2a2419}
+.pc-keys{
+  display:block;position:absolute;left:18px;top:94px;width:96px;height:10px;border-radius:2px;
+  background:repeating-linear-gradient(90deg, #3a3226 0 6px, #2a2419 6px 7px);
+  transform:rotateX(70deg);transform-origin:top;
+}
+.studio-cam{
+  left:188px;top:-52px;width:78px;height:58px;text-decoration:none;color:inherit;
+  transform:translateZ(-28px) rotateY(-12deg);display:block;cursor:pointer;
+}
+.cam-body{
+  display:block;position:absolute;left:8px;top:16px;width:52px;height:32px;border-radius:5px;
+  background:linear-gradient(#3a3226, #1f1a14);box-shadow:0 6px 12px rgba(40,25,10,.3);
+}
+.cam-top{
+  display:block;position:absolute;left:18px;top:8px;width:22px;height:12px;border-radius:3px 3px 0 0;background:#2a2419;
+}
+.cam-lens{
+  display:block;position:absolute;left:46px;top:20px;width:26px;height:26px;border-radius:50%;
+  background:radial-gradient(circle at 40% 35%, #6a8aaa, #1a2838 46%, #0b1016 70%);
+  box-shadow:0 0 0 4px #2a2419, 0 0 0 7px #4a4032;
+}
+.cam-ring{
+  display:block;position:absolute;left:52px;top:26px;width:14px;height:14px;border-radius:50%;
+  border:2px solid rgba(255,255,255,.18);
+}
+.studio-cam:hover .cam-lens,.studio-cam:focus-visible .cam-lens{
+  box-shadow:0 0 0 4px #2a2419, 0 0 0 7px #a4451f, 0 0 16px rgba(164,69,31,.45);
+}
+.studio-label{
+  position:absolute;left:50%;bottom:-22px;transform:translateX(-50%);
+  font-family:'Segoe UI',system-ui,sans-serif;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;
+  color:var(--accent);background:rgba(255,253,248,.92);border:1px solid var(--border);
+  padding:3px 8px;border-radius:3px;white-space:nowrap;
+  opacity:0;transition:opacity .2s;pointer-events:none;z-index:3;
+}
+.studio-pc:hover .studio-label,.studio-cam:hover .studio-label,
+.studio-pc:focus-visible .studio-label,.studio-cam:focus-visible .studio-label{opacity:1}
+.studio-pc i,.studio-cam i{pointer-events:none}
+.studio-pc:hover,.studio-cam:hover,.studio-pc:focus-visible,.studio-cam:focus-visible{filter:brightness(1.06)}
+.studio-pc:focus-visible,.studio-cam:focus-visible{outline:2px solid var(--accent);outline-offset:6px}
+@media (prefers-reduced-motion: reduce){
+  .studio-scene,.studio-viewport:hover .studio-scene{transition:none}
+}
+
 /* Essays / writing */
 .essay h3{font-size:22px;margin-bottom:6px}
 .essay h3 a{color:var(--text);text-decoration:none}
@@ -108,6 +262,9 @@ footer.site-footer a{color:var(--accent)}
   nav.main a{margin:0 8px}
   .work-list .row{flex-direction:column;gap:4px}
   .work-list .tag{text-align:left;white-space:normal}
+  .studio-viewport{height:380px}
+  .studio-scene{margin-top:86px;transform:rotateX(calc(16deg + var(--tilt-x, 0deg))) rotateY(calc(-18deg + var(--tilt-y, 0deg))) scale(.72)}
+  .studio-label{opacity:1;bottom:-26px}
 }
 
 /* ===================== The Exhibition ===================== */
