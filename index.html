@@ -19,6 +19,7 @@
   <nav class="main">
     <a href="index.html" class="active">Home</a>
     <a href="writing.html">Writing</a>
+    <a href="reading.html">Reading</a>
     <a href="photos.html">Photos</a>
     <a href="engineering-work.html">Engineering Work</a>
   </nav>
@@ -30,49 +31,26 @@
   </section>
 
   <section class="studio-block" aria-label="The studio">
-    <div class="section-label">The Studio</div>
-    <p class="studio-hint">Click the computer for engineering work, or the camera for photographs.</p>
-    <div class="studio-viewport" id="studio">
-      <div class="studio-scene">
-        <div class="studio-room">
-          <div class="studio-ceil" aria-hidden="true"></div>
-          <div class="studio-wall studio-back" aria-hidden="true">
-            <div class="studio-frame"></div>
-            <div class="studio-window"><span></span><span></span></div>
-          </div>
-          <div class="studio-wall studio-left" aria-hidden="true"></div>
-          <div class="studio-floor" aria-hidden="true"></div>
-          <div class="studio-desk">
-            <i class="desk-top" aria-hidden="true"></i>
-            <i class="desk-front" aria-hidden="true"></i>
-            <i class="desk-side" aria-hidden="true"></i>
-            <i class="desk-leg l1" aria-hidden="true"></i>
-            <i class="desk-leg l2" aria-hidden="true"></i>
-            <div class="studio-lamp" aria-hidden="true">
-              <i class="lamp-arm"></i>
-              <i class="lamp-head"></i>
-              <i class="lamp-glow"></i>
-            </div>
-            <a class="studio-pc" href="engineering-work.html" aria-label="Open Engineering Work">
-              <i class="pc-screen">
-                <i class="pc-code"></i>
-              </i>
-              <i class="pc-bezel"></i>
-              <i class="pc-neck"></i>
-              <i class="pc-base"></i>
-              <i class="pc-keys"></i>
-              <span class="studio-label">Engineering Work</span>
-            </a>
-            <a class="studio-cam" href="photos.html" aria-label="Open Photos">
-              <i class="cam-body"></i>
-              <i class="cam-top"></i>
-              <i class="cam-lens"></i>
-              <i class="cam-ring"></i>
-              <span class="studio-label">Photos</span>
-            </a>
-          </div>
-        </div>
-      </div>
+    <div class="studio-inner">
+      <div class="section-label">The Studio</div>
+      <p class="studio-hint">Click an object on the desk — or the bookshelf — to enter that part of the site.</p>
+      <figure class="studio-photo">
+        <img src="images/studio/the-studio.jpg" width="1024" height="768" alt="A study at sunset: bookshelf, camera, notebook, laptop, a yellow stone, and a seashell on the desk">
+        <a class="hotspot hs-shelf" href="reading.html" aria-label="Open Reading"><span>Reading</span></a>
+        <a class="hotspot hs-camera" href="photos.html" aria-label="Open Photos"><span>Photos</span></a>
+        <a class="hotspot hs-notebook" href="writing.html" aria-label="Open Writing"><span>Writing</span></a>
+        <a class="hotspot hs-laptop" href="engineering-work.html" aria-label="Open Engineering Work"><span>Engineering Work</span></a>
+        <a class="hotspot hs-stone" href="rooms/room-7.html" aria-label="Open Yellowstone"><span>Yellowstone</span></a>
+        <a class="hotspot hs-shell" href="rooms/room-1.html" aria-label="Open the Caribbean"><span>The Caribbean</span></a>
+      </figure>
+      <p class="studio-legend">
+        <a href="reading.html">Bookshelf → Reading</a>
+        <a href="photos.html">Camera → Photos</a>
+        <a href="writing.html">Notebook → Writing</a>
+        <a href="engineering-work.html">Laptop → Engineering</a>
+        <a href="rooms/room-7.html">Yellow stone → Yellowstone</a>
+        <a href="rooms/room-1.html">Seashell → Caribbean</a>
+      </p>
     </div>
   </section>
 
@@ -91,7 +69,7 @@
     <aside class="side">
       <div class="section-label">The Exhibition</div>
       <a href="photos.html" style="text-decoration:none"><div class="ph"><img src="images/caribbean/san-juan/el-morro-san-juan.jpg" alt="Arms outstretched on the lawn facing Castillo San Felipe del Morro" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:4px"></div></a>
-      <div class="cap"><em>Notes on Light</em> — a photography exhibition, one room per place. Now showing: the Caribbean, Seattle, Alaska, Washington D.C., Miami, and New York.</div>
+      <div class="cap"><em>Notes on Light</em> — a photography exhibition, one room per place. Now showing: the Caribbean, Seattle, Alaska, Washington D.C., Miami, New York, and Yellowstone.</div>
       <p style="margin-top:14px"><a href="photos.html" class="sans" style="font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none">Enter the exhibition →</a></p>
     </aside>
   </div>
@@ -119,23 +97,5 @@
     © 2026 Nan Xiao · <a href="mailto:nx2177@columbia.edu">Email</a> · <a href="https://github.com/nx2177">GitHub</a> · <a href="https://linkedin.com/in/nan-xiao-bb4805327">LinkedIn</a>
   </footer>
 </div>
-<script>
-(function(){
-  var vp = document.getElementById('studio');
-  if (!vp || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var scene = vp.querySelector('.studio-scene');
-  vp.addEventListener('pointermove', function(e){
-    var r = vp.getBoundingClientRect();
-    var x = (e.clientX - r.left) / r.width - 0.5;
-    var y = (e.clientY - r.top) / r.height - 0.5;
-    scene.style.setProperty('--tilt-x', (-y * 8).toFixed(2) + 'deg');
-    scene.style.setProperty('--tilt-y', (x * 12).toFixed(2) + 'deg');
-  });
-  vp.addEventListener('pointerleave', function(){
-    scene.style.setProperty('--tilt-x', '0deg');
-    scene.style.setProperty('--tilt-y', '0deg');
-  });
-})();
-</script>
 </body>
 </html>

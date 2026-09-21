@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Room VII · Yellowstone — Notes on Light · Nan Xiao</title>
+<meta name="description" content="Room VII of Notes on Light — Yellowstone, waiting for its prints.">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  .ys{position:relative;min-height:72vh;margin:0 0 40px;border-radius:6px;overflow:hidden;
+    background:
+      radial-gradient(ellipse at 50% 108%, rgba(244,217,154,.35), transparent 46%),
+      linear-gradient(180deg, #f3b15c 0%, #d46a32 32%, #6a3a22 58%, #1c120c 100%)}
+  .ys::before{content:"";position:absolute;left:0;right:0;bottom:0;height:34%;
+    background:linear-gradient(180deg, transparent, rgba(18,10,6,.55));pointer-events:none}
+  .ys-steam{position:absolute;left:18%;bottom:22%;width:28%;height:48%;
+    background:radial-gradient(ellipse at 50% 80%, rgba(255,255,255,.45), transparent 70%);
+    filter:blur(18px);animation:steam 7s ease-in-out infinite}
+  .ys-steam.b{left:52%;width:22%;animation-delay:-2.5s}
+  .ys-pines{position:absolute;left:0;right:0;bottom:0;height:42%;
+    background:repeating-linear-gradient(90deg, transparent 0 28px, rgba(10,8,6,.55) 28px 34px, transparent 34px 70px);
+    clip-path:polygon(0 100%, 0 48%, 6% 18%, 9% 52%, 14% 8%, 18% 50%, 24% 22%, 28% 56%, 36% 4%, 40% 54%, 48% 16%, 52% 58%, 60% 10%, 64% 52%, 72% 20%, 76% 60%, 84% 12%, 88% 50%, 94% 28%, 100% 62%, 100% 100%)}
+  @keyframes steam{0%,100%{transform:translateY(0) scale(1);opacity:.7}50%{transform:translateY(-18px) scale(1.08);opacity:.95}}
+  .ys-copy{position:relative;z-index:2;max-width:460px;padding:48px 36px 80px;color:#f7ead4}
+  .ys-copy .roman{font-family:'Segoe UI',system-ui,sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#f0c27a}
+  .ys-copy h1{font-size:42px;margin:8px 0 10px}
+  .ys-copy p{font-style:italic;font-size:16.5px;line-height:1.55;color:#f3e2c4}
+</style>
+</head>
+<body>
+<div class="room-wrap">
+
+  <div class="room-top">
+    <a href="../photos.html">← Back to the hall</a>
+    <a href="../index.html" class="mid" style="text-decoration:none">Notes on Light · Nan Xiao</a>
+    <a href="room-1.html">Room I →</a>
+  </div>
+
+  <section class="ys" aria-label="Yellowstone">
+    <div class="ys-steam"></div>
+    <div class="ys-steam b"></div>
+    <div class="ys-pines"></div>
+    <div class="ys-copy">
+      <div class="roman">Room VII</div>
+      <h1>Yellowstone</h1>
+      <p>The yellow stone on the desk is the door. Photographs from the park will hang here as they are printed — steam, bison, and that long evening light.</p>
+    </div>
+  </section>
+
+  <div class="room-wall-text">
+    <div class="years">The exhibition is being prepared</div>
+    <p>Until the prints arrive, this room holds the idea of the place: earth that breathes, water that should not be blue and yet is, light that turns everything the color of the stone on the desk.</p>
+  </div>
+
+  <div class="room-nav">
+    <a href="room-6.html">← Room VI</a>
+    <a href="../photos.html">Back to the hall →</a>
+  </div>
+
+</div>
+</body>
+</html>
