@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engineering Work — Nan Xiao</title>
+<meta name="description" content="Engineering work by Nan Xiao: production platforms, workflow systems, data products, and LLM evaluation.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <div class="site-title"><a href="index.html">Nan Xiao</a></div>
+    <div class="sub">Notes on machines, places, and light</div>
+  </header>
+  <nav class="main">
+    <a href="index.html">Home</a>
+    <a href="writing.html">Writing</a>
+    <a href="photos.html">Photos</a>
+    <a href="engineering-work.html" class="active">Engineering Work</a>
+  </nav>
+
+  <h1 class="page-title">Engineering Work</h1>
+  <p class="page-intro">Production platforms, self-service data products, and LLM systems — from Antares Capital, Summoner, and Epsilla. More on <a href="https://github.com/nx2177">GitHub</a>.</p>
+  <a class="btn" href="assets/Resume_Nan_Xiao.pdf" download>Download Resume PDF</a>
+
+  <hr class="rule">
+
+  <ul class="work-list">
+    <li>
+      <div class="row"><h4>Enterprise Workflow Orchestration Platform</h4><span class="tag">TypeScript · Nest.js · MySQL · React</span></div>
+      <div class="where">Antares Capital, New York — Software Engineer</div>
+      <p>Built an end-to-end workflow platform to replace multi-week, manually coordinated operations with a centralized, auditable system across MySQL, REST APIs, and a micro-frontend UI. A versioned template-instance model lets templates evolve without disrupting in-flight runs; group-based three-tier permissions enforce least privilege at process, step, and task scope. Schema-driven configuration auto-generates grids, forms, and filters, with alerts, audit history, health indicators, and email notifications backed by distributed scheduling.</p>
+    </li>
+    <li>
+      <div class="row"><h4>Governed Self-Service Data Product</h4><span class="tag">SQL · Cloud warehouse · RBAC</span></div>
+      <div class="where">Antares Capital, New York — Software Engineer</div>
+      <p>A self-service analytics product that turns warehouse tables and views into business-friendly reports, so authorized users can discover, analyze, and save work without writing SQL. Governance and lineage rest on validated source mappings, UUID-based contracts, role-based access, lifecycle controls, and immutable report lineage — administrators can manage approved datasets without breaking existing reports or changing their meaning.</p>
+    </li>
+    <li>
+      <div class="row"><h4>Server-Side Pagination Re-architecture</h4><span class="tag">SQL · Redis · Microservices</span></div>
+      <div class="where">Antares Capital, New York — Software Engineer</div>
+      <p>Re-architected a legacy data grid from client-side full loading to server-side pagination with database-driven SQL queries, pagination-optimized indexing, and Redis-based distributed caching. Reduced payload size from ~50MB to ~200KB and page load time from 10–30s to 1–2s, improving query latency under large datasets and enabling stateless services that scale horizontally across API servers.</p>
+    </li>
+    <li>
+      <div class="row"><h4>Multi-Agent LLM Evaluation Platform</h4><span class="tag">Python · GPT-4o · Asyncio</span></div>
+      <div class="where">Summoner, New York — AI Engineer</div>
+      <p>An LLM-driven platform that ingests user context, generates domain-agnostic challenge questions with logical reasoning pathways, synthesizes AI personas, and orchestrates real-time timed challenge sessions. Answers are evaluated with GPT-4o structured logic extraction and embedding cosine-similarity scoring for automated partial credit. Includes a configurable multi-factor scoring system, cost-observability safeguards with real-time USD tracking and budget ceilings, semaphore-bounded async concurrency, and a state-machine protocol letting persona agents request peer hints through async message queues.</p>
+    </li>
+    <li>
+      <div class="row"><h4>Evaluation Analytics Pipeline</h4><span class="tag">SQL · PLS Regression</span></div>
+      <div class="where">Summoner, New York — AI Engineer</div>
+      <p>A SQL-based pipeline collecting agent telemetry and experimental data at scale, powering statistical diagnostics and benchmarking. Includes a Partial Least Squares regression dashboard with cross-validated Q² metrics and VIP feature-importance scoring to identify performance drivers across agent configurations.</p>
+    </li>
+    <li>
+      <div class="row"><h4>Local RAG Research Agent</h4><span class="tag">LangChain · Ollama · RAG</span></div>
+      <div class="where">Epsilla (YC 23), New York — AI Product Strategist</div>
+      <p>An Ollama-powered automated research system built on LangChain: multi-source search (DuckDuckGo, Tavily, Perplexity), local LLM summarization, YouTube transcript ingestion, configurable research loops, and SMTP delivery of concise, citation-backed reports — improving research efficiency by 27%.</p>
+    </li>
+  </ul>
+
+  <div class="resume">
+    <h2>Education</h2>
+
+    <div class="entry">
+      <div class="head"><h3>Columbia University — MA in Statistics</h3><span class="when">September 2024 – February 2026 · New York, NY</span></div>
+      <ul>
+        <li>Coursework: Generative AI using LLMs, NLP, Advanced Machine Learning, Statistical Machine Learning, Algorithms for Data Science, Applied Data Science, Advanced Data Analysis, Linear Regression, Probability, Inference.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="head"><h3>The Chinese University of Hong Kong, Shenzhen — BS in Applied Mathematics</h3><span class="when">September 2020 – July 2024 · Shenzhen, China</span></div>
+      <ul>
+        <li>Coursework: Machine Learning, Data Structures, Optimization, Stochastic Processes, Mathematical Modeling, Real Analysis.</li>
+      </ul>
+    </div>
+
+    <h2>Skills</h2>
+    <div class="skills">
+      <p><strong>Languages:</strong> TypeScript/JavaScript, Python, SQL, Java, HTML/CSS</p>
+      <p><strong>AI / ML:</strong> PyTorch, Transformers, RAG, LangChain, TensorFlow, Hugging Face, Vector DBs, OpenAI, Pandas, NumPy, Scikit-learn</p>
+      <p><strong>Backend &amp; Frontend:</strong> Kafka, REST APIs, Microservices, React, Node.js, Nest.js, Zustand, Event-driven Architecture, TypeORM</p>
+      <p><strong>Data &amp; Cloud:</strong> PostgreSQL, MySQL, Redis, Git, Docker, CI/CD, Azure DevOps, GCP, AWS, Datadog</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    © 2026 Nan Xiao · <a href="mailto:nx2177@columbia.edu">Email</a> · <a href="https://github.com/nx2177">GitHub</a> · <a href="https://linkedin.com/in/nan-xiao-bb4805327">LinkedIn</a>
+  </footer>
+</div>
+</body>
+</html>

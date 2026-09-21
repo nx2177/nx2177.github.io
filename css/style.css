@@ -13,7 +13,7 @@ header.masthead{text-align:center;padding:40px 0 26px;border-bottom:3px double v
 header.masthead .site-title{font-size:40px;font-weight:700;letter-spacing:-.5px}
 header.masthead .site-title a{color:var(--text);text-decoration:none}
 header.masthead .sub{font-style:italic;color:var(--muted);margin-top:4px}
-nav.main{text-align:center;padding:14px 0;border-bottom:1px solid var(--border)}
+nav.main{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 0;padding:14px 0;border-bottom:1px solid var(--border)}
 nav.main a{color:var(--text);text-decoration:none;margin:0 14px;font-size:13px;text-transform:uppercase;letter-spacing:2px;font-family:'Segoe UI',system-ui,sans-serif}
 nav.main a:hover,nav.main a.active{color:var(--accent)}
 
@@ -83,7 +83,7 @@ article.post-body img{max-width:100%;border-radius:4px;margin:10px 0}
 .work-list h4{font-size:19px}
 .work-list p{font-size:15px;color:#4a4234;margin-top:6px}
 .work-list .where{font-size:13px;color:var(--muted);font-style:italic}
-.work-list .tag{font-family:'Segoe UI',system-ui,sans-serif;font-size:12px;color:var(--accent);white-space:nowrap}
+.work-list .tag{font-family:'Segoe UI',system-ui,sans-serif;font-size:12px;color:var(--accent);white-space:nowrap;text-align:right}
 
 /* Resume */
 .resume h2{font-size:15px;text-transform:uppercase;letter-spacing:3px;color:var(--accent);font-family:'Segoe UI',system-ui,sans-serif;margin:36px 0 14px;border-bottom:1px solid var(--border);padding-bottom:6px}
@@ -106,6 +106,8 @@ footer.site-footer a{color:var(--accent)}
   header.masthead .site-title{font-size:30px}
   .gallery{grid-template-columns:repeat(2,1fr)}
   nav.main a{margin:0 8px}
+  .work-list .row{flex-direction:column;gap:4px}
+  .work-list .tag{text-align:left;white-space:normal}
 }
 
 /* ===================== The Exhibition ===================== */
