@@ -106,6 +106,8 @@ article.post-body h1{font-size:32px;line-height:1.25;margin-bottom:8px}
 article.post-body .meta{font-size:13px;color:var(--muted);font-style:italic;margin-bottom:28px}
 article.post-body p{font-size:17px;margin-bottom:20px;color:#3a3226}
 article.post-body h2{font-size:22px;margin:36px 0 16px}
+article.post-body h3{font-size:18px;margin:28px 0 12px;font-weight:600}
+article.post-body .note{font-size:15px;color:var(--muted);margin-top:8px}
 article.post-body blockquote{margin:6px 0 20px;padding:2px 0 2px 18px;border-left:2px solid var(--border);color:#3a3226;font-size:17px;font-style:normal;line-height:1.7}
 article.post-body img{max-width:100%;border-radius:4px;margin:10px 0}
 
