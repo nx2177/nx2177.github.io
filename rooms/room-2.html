@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>(function(){try{var s=localStorage.getItem("nx-lang");var l=(s==="zh"||s==="en")?s:([].concat(navigator.languages||[],[navigator.language||""]).some(function(x){return x&&/^zh\b/i.test(x)})?"zh":"en");document.documentElement.setAttribute("data-lang",l);}catch(e){document.documentElement.setAttribute("data-lang","en");}})();</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Room II · Seattle — Notes on Light · Nan Xiao</title>
@@ -11,7 +13,7 @@
 <div class="room-wrap">
 
   <div class="room-top">
-    <a href="../photos.html">← Back to the hall</a>
+    <a href="../photos.html"><span class="t-en">← Back to the hall</span><span class="t-zh">← 返回展厅</span></a>
     <a href="../index.html" class="mid" style="text-decoration:none">Notes on Light · Nan Xiao</a>
     <a href="room-3.html">Room III →</a>
   </div>
@@ -91,5 +93,6 @@
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
 })();
 </script>
+<script src="../js/lang.js"></script>
 </body>
 </html>

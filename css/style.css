@@ -9,7 +9,7 @@ body{font-family:Georgia,'Times New Roman',serif;background:var(--bg);color:var(
 .wrap{max-width:820px;margin:0 auto;padding:0 24px}
 
 /* Masthead & nav */
-header.masthead{text-align:center;padding:40px 0 26px;border-bottom:3px double var(--border)}
+header.masthead{text-align:center;padding:40px 96px 26px;border-bottom:3px double var(--border)}
 header.masthead .site-title{font-size:40px;font-weight:700;letter-spacing:-.5px}
 header.masthead .site-title a{color:var(--text);text-decoration:none}
 header.masthead .sub{font-style:italic;color:var(--muted);margin-top:4px}
@@ -159,12 +159,17 @@ article.post-body img{max-width:100%;border-radius:4px;margin:10px 0}
 
 /* Footer */
 footer.site-footer{margin:56px 0 40px;padding-top:22px;border-top:3px double var(--border);text-align:center;color:var(--muted);font-size:14px}
+html[data-lang="zh"] .t-en{display:none!important}
+html[data-lang="en"] .t-zh,html:not([data-lang]) .t-zh{display:none!important}
+html[data-lang="zh"] .reading-year .book > p{display:none}
+html[data-lang="zh"] details.zh-original > summary{display:none}
 footer.site-footer a{color:var(--accent)}
 
 @media(max-width:640px){
   .two-col{grid-template-columns:1fr}
   .lede h1{font-size:27px}
   header.masthead .site-title{font-size:30px}
+  header.masthead{padding:40px 24px 26px}
   .gallery{grid-template-columns:repeat(2,1fr)}
   nav.main a{margin:0 8px}
   .work-list .row{flex-direction:column;gap:4px}

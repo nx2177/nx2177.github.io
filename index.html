@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>(function(){try{var s=localStorage.getItem("nx-lang");var l=(s==="zh"||s==="en")?s:([].concat(navigator.languages||[],[navigator.language||""]).some(function(x){return x&&/^zh\b/i.test(x)})?"zh":"en");document.documentElement.setAttribute("data-lang",l);}catch(e){document.documentElement.setAttribute("data-lang","en");}})();</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nan Xiao — AI Engineer, Photographer, Writer</title>
@@ -14,7 +15,7 @@
 <div class="wrap">
   <header class="masthead">
     <div class="site-title"><a href="index.html">Nan Xiao</a></div>
-    <div class="sub">A life in pursuit of freedom, truth, and beauty.</div>
+    <div class="sub"><span class="t-en">A life in pursuit of freedom, truth, and beauty.</span><span class="t-zh">一生追求自由、真理与美。</span></div>
   </header>
 
   <section class="studio-block" aria-label="The studio">
@@ -33,7 +34,7 @@
 
   <hr class="rule">
 
-  <div class="two-col">
+  <div class="two-col t-en">
     <div>
       <div class="section-label">Latest Writing</div>
       <article class="essay">
@@ -59,28 +60,76 @@
     </aside>
   </div>
 
+  <div class="two-col t-zh">
+    <div>
+      <div class="section-label">最新文章</div>
+      <article class="essay">
+        <h3><a href="posts/miami.html">迈阿密四天穷游｜人生第二次独自旅行</a></h3>
+        <div class="date">2026 · 旅行</div>
+        <p>这是我人生中第二次独自旅行，感觉是最艰难的一次。</p>
+      </article>
+      <p style="margin-top:24px"><a href="writing.html" class="sans" style="font-size:13px;letter-spacing:1px;text-decoration:none">全部文章 →</a></p>
+
+      <div class="section-label" style="margin-top:40px">最近在读</div>
+      <article class="essay">
+        <h3><a href="reading.html">2026</a></h3>
+        <div class="date">穷查理宝典 · 聪明的投资者 · 从0到1</div>
+        <p>今年还在读：《少年维特的烦恼》、《战争与和平》、《富爸爸穷爸爸》，以及《全球通史》。</p>
+      </article>
+      <p style="margin-top:24px"><a href="reading.html" class="sans" style="font-size:13px;letter-spacing:1px;text-decoration:none">全部阅读 →</a></p>
+    </div>
+    <aside class="side">
+      <div class="section-label">展览</div>
+      <a href="photos.html" style="text-decoration:none"><div class="ph"><img src="images/caribbean/san-juan/el-morro-san-juan.jpg" alt="圣胡安莫罗堡草坪上张开双臂" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:4px"></div></a>
+      <div class="cap"><em>光的笔记</em> — 摄影展，一地一室。正在展出：加勒比、西雅图、阿拉斯加、华盛顿、迈阿密、纽约，以及黄石。</div>
+      <p style="margin-top:14px"><a href="photos.html" class="sans" style="font-size:13px;letter-spacing:1px;text-decoration:none">进入展览 →</a></p>
+    </aside>
+  </div>
+
   <hr class="rule">
 
-  <div class="section-label">Selected Work</div>
-  <ul class="work-list">
-    <li>
-      <div class="row"><h4>Enterprise Workflow Orchestration Platform</h4><span class="tag">TypeScript · Nest.js</span></div>
-      <p>End-to-end workflow system replacing multi-week manual processes with versioned templates, permissions, and auditability.</p>
-    </li>
-    <li>
-      <div class="row"><h4>Governed Self-Service Data Product</h4><span class="tag">SQL · RBAC</span></div>
-      <p>Turns warehouse tables into business-friendly analytics with lineage, contracts, and role-based access.</p>
-    </li>
-    <li>
-      <div class="row"><h4>Multi-Agent LLM Evaluation Platform</h4><span class="tag">Python · GPT-4o</span></div>
-      <p>Persona synthesis, timed challenge sessions, and semantic scoring with LLM logic extraction and embedding similarity.</p>
-    </li>
-  </ul>
-  <p style="margin-top:20px"><a href="engineering-work.html" class="sans" style="font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none">All engineering work →</a></p>
+  <div class="t-en">
+    <div class="section-label">Selected Work</div>
+    <ul class="work-list">
+      <li>
+        <div class="row"><h4>Enterprise Workflow Orchestration Platform</h4><span class="tag">TypeScript · Nest.js</span></div>
+        <p>End-to-end workflow system replacing multi-week manual processes with versioned templates, permissions, and auditability.</p>
+      </li>
+      <li>
+        <div class="row"><h4>Governed Self-Service Data Product</h4><span class="tag">SQL · RBAC</span></div>
+        <p>Turns warehouse tables into business-friendly analytics with lineage, contracts, and role-based access.</p>
+      </li>
+      <li>
+        <div class="row"><h4>Multi-Agent LLM Evaluation Platform</h4><span class="tag">Python · GPT-4o</span></div>
+        <p>Persona synthesis, timed challenge sessions, and semantic scoring with LLM logic extraction and embedding similarity.</p>
+      </li>
+    </ul>
+    <p style="margin-top:20px"><a href="engineering-work.html" class="sans" style="font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none">All engineering work →</a></p>
+  </div>
+
+  <div class="t-zh">
+    <div class="section-label">精选工作</div>
+    <ul class="work-list">
+      <li>
+        <div class="row"><h4>企业工作流编排平台</h4><span class="tag">TypeScript · Nest.js</span></div>
+        <p>端到端工作流系统，用可版本化的模板、权限与审计，替代原先需要数周人工协调的流程。</p>
+      </li>
+      <li>
+        <div class="row"><h4>可控的自助数据产品</h4><span class="tag">SQL · RBAC</span></div>
+        <p>把数仓表变成业务可理解的分析，带血缘、契约与基于角色的访问控制。</p>
+      </li>
+      <li>
+        <div class="row"><h4>多智能体 LLM 评测平台</h4><span class="tag">Python · GPT-4o</span></div>
+        <p>人格合成、限时挑战，以及用 LLM 抽取逻辑、用向量相似度打分的语义评测。</p>
+      </li>
+    </ul>
+    <p style="margin-top:20px"><a href="engineering-work.html" class="sans" style="font-size:13px;letter-spacing:1px;text-decoration:none">全部工程作品 →</a></p>
+  </div>
 
   <footer class="site-footer">
-    © 2026 Nan Xiao · <a href="mailto:nx2177@columbia.edu">Email</a> · <a href="https://github.com/nx2177">GitHub</a> · <a href="https://linkedin.com/in/nan-xiao-bb4805327">LinkedIn</a>
+    © 2026 Nan Xiao · <a href="mailto:nx2177@columbia.edu"><span class="t-en">Email</span><span class="t-zh">邮件</span></a> · <a href="https://github.com/nx2177">GitHub</a> · <a href="https://linkedin.com/in/nan-xiao-bb4805327">LinkedIn</a>
   </footer>
 </div>
+<script src="js/lang.js"></script>
 </body>
 </html>
