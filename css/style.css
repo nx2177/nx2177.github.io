@@ -35,12 +35,19 @@ a{color:var(--accent)}
 .two-col{display:grid;grid-template-columns:1.2fr .8fr;gap:36px}
 
 /* Home studio (photo hotspots) */
+.home .masthead{border-bottom:none;padding-bottom:12px}
 .studio-block{
-  width:100vw;margin:36px 0 8px;margin-left:calc(50% - 50vw);padding:0 24px;
+  width:100vw;margin:8px 0 8px;margin-left:calc(50% - 50vw);padding:0;
 }
-.studio-block .studio-inner{max-width:1100px;margin:0 auto}
-.studio-photo{position:relative;margin:0;border-radius:6px;overflow:hidden;background:#1c150c}
-.studio-photo img{width:100%;height:auto;display:block}
+.studio-block .studio-inner{max-width:1180px;margin:0 auto;padding:0 8px}
+.studio-photo{position:relative;margin:0;background:transparent}
+.studio-photo img{width:100%;height:auto;display:block;border-radius:0}
+.studio-photo::before{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    linear-gradient(to right, var(--bg) 0%, rgba(247,242,233,0) 11%, rgba(247,242,233,0) 89%, var(--bg) 100%),
+    linear-gradient(to bottom, var(--bg) 0%, rgba(247,242,233,0) 12%, rgba(247,242,233,0) 88%, var(--bg) 100%);
+}
 .hotspot{
   position:absolute;z-index:2;text-decoration:none;cursor:pointer;
   border-radius:50%;background:transparent;outline:none;
