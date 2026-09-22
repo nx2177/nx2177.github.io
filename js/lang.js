@@ -31,6 +31,9 @@
   function apply(lang, persist) {
     if (lang !== "zh" && lang !== "en") lang = "en";
     document.documentElement.setAttribute("data-lang", lang);
+    document.documentElement.lang = lang === "zh" ? "zh-Hans" : "en";
+    var title = document.documentElement.getAttribute(lang === "zh" ? "data-title-zh" : "data-title-en");
+    if (title) document.title = title;
     if (persist) {
       try { localStorage.setItem(KEY, lang); } catch (e) {}
     }
@@ -58,7 +61,11 @@
       var box = document.createElement("div");
       box.className = "lang-switch";
       box.setAttribute("role", "group");
+      box.setAttribute("translate", "no");
       if (document.querySelector(".room-top, .bar")) box.classList.add("lang-switch-room");
+      document.querySelectorAll("header.masthead, nav.main, footer.site-footer").forEach(function (el) {
+        el.setAttribute("translate", "no");
+      });
       box.innerHTML =
         '<button type="button" data-code="en" aria-label="English">EN</button>' +
         '<span class="lang-sep" aria-hidden="true">·</span>' +
