@@ -77,6 +77,29 @@ a{color:var(--accent)}
 .essay + .essay{margin-top:30px;padding-top:30px;border-top:1px solid var(--border)}
 .tag-pill{font-family:'Segoe UI',system-ui,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--accent);border:1px solid var(--border);border-radius:3px;padding:2px 8px;margin-left:8px;vertical-align:middle}
 
+/* Reading timeline */
+.reading-year{position:relative;padding-left:26px;border-left:2px solid var(--border);margin:8px 0 52px}
+.reading-year::before{content:"";position:absolute;left:-5px;top:6px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.reading-year .year-mark{font-family:'Segoe UI',system-ui,sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.year-shelf{list-style:none}
+.year-shelf li{padding:11px 0;border-bottom:1px solid var(--border);font-size:17px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.year-shelf em{font-style:italic}
+.year-shelf .who{color:var(--muted);font-size:14px;font-style:italic}
+.book{margin:0 0 8px;padding:0 0 26px;border-bottom:1px solid var(--border)}
+.book + .book{margin-top:26px}
+.book h3{font-size:22px;margin-bottom:4px}
+.book .who{font-size:13px;color:var(--muted);font-style:italic;margin-bottom:12px}
+.book p{font-size:16px;color:#4a4234}
+.zh-original{margin-top:22px;padding-top:8px}
+.zh-original summary{cursor:pointer;font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;letter-spacing:.5px;color:var(--accent);list-style:none}
+.zh-original summary::-webkit-details-marker{display:none}
+.zh-original summary::before{content:"▸ ";font-size:11px}
+.zh-original[open] summary::before{content:"▾ "}
+.zh-original[open] summary{margin-bottom:20px}
+.zh-note{margin-bottom:24px}
+.zh-note h4{font-size:17px;margin-bottom:8px}
+.zh-note p{font-size:15.5px;line-height:1.9;color:#3a3226}
+
 /* Article body */
 article.post-body{max-width:660px;margin:0 auto;padding:48px 0}
 article.post-body h1{font-size:32px;line-height:1.25;margin-bottom:8px}
@@ -142,6 +165,7 @@ footer.site-footer a{color:var(--accent)}
   nav.main a{margin:0 8px}
   .work-list .row{flex-direction:column;gap:4px}
   .work-list .tag{text-align:left;white-space:normal}
+  .year-shelf li{flex-direction:column;gap:2px}
 }
 
 /* ===================== The Exhibition ===================== */
