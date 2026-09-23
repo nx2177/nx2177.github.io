@@ -180,7 +180,7 @@ footer.site-footer a{color:var(--accent)}
 /* ===================== The Exhibition ===================== */
 
 /* --- Museum hall (photos.html) --- */
-.hall{position:relative;min-height:88vh;display:flex;flex-direction:column;overflow:hidden;
+.hall{position:relative;min-height:72vh;display:flex;flex-direction:column;overflow-x:hidden;
   width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);
   background:linear-gradient(#f6efdf 0%, #efe4cd 46%, #e6d8ba 62%)}
 .hall::before{content:"";position:absolute;top:-18vh;left:50%;transform:translateX(-50%);
@@ -196,7 +196,7 @@ footer.site-footer a{color:var(--accent)}
   transform:perspective(520px) rotateX(48deg);transform-origin:50% 100%;
   box-shadow:0 -14px 40px rgba(90,70,40,.18) inset}
 .arches{position:relative;z-index:2;display:flex;justify-content:center;align-items:flex-end;gap:4.5vw;
-  margin-top:auto;padding:10vh 4vw 13vh;flex-wrap:wrap}
+  padding:calc(9vh + 110px) 4vw 16vh;flex-wrap:wrap}
 .doorway{position:relative;text-decoration:none;color:inherit;display:block}
 .doorway .arch{position:relative;width:min(210px,23vw);aspect-ratio:11/16;border-radius:999px 999px 0 0;overflow:hidden;
   border:10px solid #e7dcc4;border-bottom:none;
@@ -252,7 +252,7 @@ footer.site-footer a{color:var(--accent)}
 .room-nav .dim{color:var(--muted)}
 
 @media(max-width:760px){
-  .arches{gap:8vw;padding-bottom:11vh}
+  .arches{gap:8vw;padding:calc(9vh + 56px) 4vw 14vh}
   .doorway .arch{width:min(190px,37vw)}
   .hang,.hang.flip{grid-template-columns:1fr}
   .exhibit-label,.hang.flip .exhibit-label{order:2;margin:14px 0 0;max-width:100%;justify-self:start}
